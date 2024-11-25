@@ -1,0 +1,60 @@
+//consultancy.html
+
+<!--------------------------------------------------Appointment Modal---------------------------------------------------------->
+<div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="appointmentForm">
+                    <div class="row g-3">
+                        <div class="consultancy-type-selection dropdowm-menu">
+                            <select class="form-select" id="consultancyType" name="consultancy_type" required>
+                                <option value="">Select Consultancy</option>
+                                <option value="Financial Auditing">Financial Auditing</option>
+                                <option value="Market Pricing">Market Pricing</option>
+                                <option value="Import & Export">Import & Export</option>
+                                <option value="Travel & Tour">Travel & Tour</option>
+                                <option value="Research & Implementation">Research & Implementation</option>
+                                <option value="Data & Policy Analysis">Data & Policy Analysis</option>
+                                <option value="Business Plan">Business Plan</option>
+                                <option value="Financial Planning">Financial Planning</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="firstName" name="first_name" placeholder="First Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Last Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="date" class="form-control" id="date" name="date" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="time" class="form-control" id="time" name="time" required>
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary rounded-pill text-white py-3 px-5">Book Now</button>
+                        </div>
+                    </div>
+                </form>                
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------------------------Appointment Modal End---------------------------------------------------------->
+
+I want to implement this function and users should receive an email confirmation after successful booking 

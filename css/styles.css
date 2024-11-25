@@ -1,0 +1,396 @@
+/* Basic Styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+}
+
+h1, h2, h5 {
+    color: #4ad8ff; /* Preferred color */
+    font-weight: bold;
+}
+a, li, ul {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/* Spinner */
+#spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+/* Top Bar */
+.topbar {
+    background-color: #010101;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.topbar a {
+    color: #fff;
+    margin-left: 10px;
+}
+
+.topbar a:hover {
+    color: #007bff; /* Preferred color */
+}
+
+/* Sticky Navbar */
+
+.navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #333;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #4ad8ff; /* Preferred color */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff; /* Preferred color */
+}
+
+
+.navbar .btn {
+    background-color: #007bff; /* Preferred color */
+    color: white;
+    border-radius: 20px;
+}
+
+/* Carousel */
+.carousel-item {
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption {
+    bottom: 20%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+}
+
+.carousel-caption h5 {
+    font-size: 70px;
+    font-weight: bold;
+    color: #00fa15;
+}
+
+.carousel-caption p {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #4ad8ff; /* Preferred color */
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    animation: fadeInUp 2s;
+}
+
+/* Testimonials Section */
+#testimonials {
+    background-color: #f0f0f0;
+    padding: 50px 0;
+}
+
+#testimonials h2 {
+    color: #007bff; /* Preferred color */
+    margin-bottom: 1rem;
+}
+
+#testimonials p {
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+}
+
+footer h5 {
+    font-size: 1.25rem;
+    color: #007bff; /* Preferred color */
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #007bff; /* Preferred color */
+}
+
+footer .btn-primary {
+    background-color: #007bff; /* Preferred color */
+    border: none;
+}
+
+footer input[type="email"] {
+    border-radius: 0;
+}
+
+/* Social Icons */
+.social-links a {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #007bff; /* Preferred color */
+}
+
+.social-links a:hover {
+    color: #0056b3;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+/* Navbar Shrink */
+.navbar-shrink {
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: padding 0.3s, background-color 0.3s;
+}
+
+/* Back-to-Top Button */
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 20px;
+    z-index: 1000;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: #007bff;
+    color: #fff;
+}
+
+/* About Section */
+.about-section {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+    width: 100%;
+}
+
+.about-section h2 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #4ad8ff; /* Preferred color */
+}
+
+.about-section p {
+    /* font-size: 20px; */
+    color: #333;
+    text-align: justify;
+}
+
+/* Services Section */
+.services-section {
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+.services-section h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+.services-section h1::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #4ad8ff; /* Preferred color */
+    margin: 20px auto;
+}
+
+.card {
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    height: 150px;
+    object-fit: cover;
+}
+
+.card h5 {
+    font-size: 30px;
+    color: #4ad8ff; /* Preferred color */
+}
+
+.card p {
+    color: #312f2f;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    background-color: #dcf9ff;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+/* Section Headings */
+.about-us h2, .services h2, .why-choose-us h2 {
+    color: var(--dark-blue);
+    font-weight: bold;
+}
+
+/* Why Choose Us Icons */
+.why-choose-us i {
+    transition: transform 0.3s ease;
+}
+
+.why-choose-us i:hover {
+    transform: scale(1.1);
+}
+
+/* Section Backgrounds */
+.about-us {
+    background-color: var(--white);
+}
+
+.services {
+    background-color: var(--light-yellow);
+}
+
+.why-choose-us {
+    background-color: var(--light-blue);
+    color: var(--white);
+}
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 40%;
+    padding: 10px;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #20c35c;
+}
+
+/* Consultancy Page Header */
+.consultancy-header {
+    background-color: var(--light-blue);
+    background-image: url('images/consultancy-bg.jpg'); /* Example background image */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+
+/* Consultancy Services Section */
+.consultancy-services .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.consultancy-services .card:hover {
+    transform: scale(1.05);
+}
+
+/* Consultancy Contact Form */
+.consultancy-contact {
+    background-color: var(--light-yellow);
+}
+.consultancy-contact .form-control {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.consultancy-contact button {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+
+
+
+
+
+/* Carousel Responsiveness */
+@media (max-width: 767px) {
+    .carousel-item {
+        height: 300px;
+    }
+    .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .carousel-item {
+        height: 400px;
+    }
+    .carousel-caption h5 {
+        font-size: 50px;
+    }
+    .carousel-caption p {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .carousel-item {
+        height: 500px;
+    }
+}

@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel | Shamina Group</title>
+
+    <!-- External CSS Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="img/logo.jpg">
+    <link rel="stylesheet" href="css/custom.css"> <!-- Link to your custom CSS -->
+    <link rel="stylesheet" href="">
+
+</head>
+<body>
+
+    <!-- Top Bar with Contact Info -->
+    <div class="bg-light py-2">
+        <div class="container d-flex justify-content-between">
+                <div class="col-md-6-left d-flex">
+                    <p class="me-2"><i class="fas fa-envelope"></i><a href="mailto:info@shaminagroup.com">info@shaminagroup.com</a></p>
+                    <p class="me-2"><i class="fas fa-phone-alt"></i>
+                        <a href="tel:+233 24 000 0000">+233 24 000 0000</a>
+                    </p>
+                </div>
+            <div class="col-md-6-right d-flex">
+                <!-- 5 Social Media Icons using Font Awesome -->
+                <a href="#" class="text-dark me-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-dark me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-dark me-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-dark me-2"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-dark me-2"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="homepage.html"><h1><i class="fas fa-hotel"></i>Shamina Hotel</h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="consultancy.html"><i class="fa-solid fa-handshake"></i>Consultancy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="farm.html"><i class="fas fa-tractor"></i>Farm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-info-circle"></i>About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2" data-bs-toggle="modal" data-bs-target="#contactModal"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="loginButton" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="myProfile"><i class="fas fa-user-circle"></i> My Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel Section -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/banner1.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5></h5>
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="img/banner2.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>
+                    </h5>
+                    <p> </p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="img/banner3.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5></h5>
+                    <p> </p>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!----------------------------------------------------About us (Detailed Hotel services)---------------------------->
+    <section class="about-us py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">About Us</h2>
+            <p class="lead">
+                Hotel Name is a luxury hotel located in the heart of the city. Our hotel offers a range of
+                services and amenities to make your stay comfortable and enjoyable. Whether you are traveling
+                for business or pleasure, our hotel is the perfect choice for your next trip.
+            </p>
+            <p class="lead">
+                Our hotel features a variety of rooms and suites to suit your needs, as well as a range of
+                facilities including a restaurant, bar, gym, swimming pool, and conference rooms. Our friendly
+                staff are always on hand to help with any questions or requests you may have during your stay.
+            </p>
+            <p class="lead">
+                We look forward to welcoming you to Hotel Name and making your stay a memorable one.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!--------------------------------------------------- Services (room reservation, gym, restaurant, conference room, bar, swimming pool, basketball court etc) ------------------------------------------------>
+<section class="services py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row">
+            <!-- Service Card 1: room -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow h-100 animate__animated animate__fadeInUp">
+                    <img src="img/room1.jpg" class="card-img-top" alt="Room Reservation">
+                    <div class="card-body">
+                        <h5 class="card-title">Room Reservation</h5>
+                        <p class="card-text">Book your room now and enjoy a comfortable stay with us.</p>
+                        <ul class="list-group-flush">
+                            <li class="list-group item">Deluxe Rooms</li>
+                            <li class="list-group item">Suites</li>
+                            <li class="list-group item">Standard Rooms</li>
+                            <li class="list-group item">Room Service</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Service Card 2: gym -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                    <img src="img/gym.jpg" class="card-img-top" alt="Gym">
+                    <div class="card-body">
+                        <h5 class="card-title">Gym</h5>
+                        <p class="card-text">Our state-of-the-art gym is equipped with the latest fitness equipment to help you stay in shape during your stay.</p>
+                        <ul class="list-group-flush">
+                            <li class="list-group item">Personal Training</li>
+                            <li class="list-group item">Group Classes</li>
+                            <li class="list-group item">Cardio Equipment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 3: trestaurant -->
+             <div class="col-md-4 mb-4">
+                <div class="card shadow h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                    <img src="img/restaurant.jpg" class="card-img-top" alt="Restaurant">
+                    <div class="card-body">
+                        <h5 class="card-title">Restaurant</h5>
+                        <p class="card-text">Enjoy a delicious meal at our restaurant, serving a variety of local and international dishes.</p>
+                        <ul class="list-group-flush">
+                            <li class="list-group item">Breakfast</li>
+                            <li class="list-group item">Lunch & Dinner</li>
+                            <li class="list-group item">Room Service</li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+
+            <!-- Service Card 4: conference room -->
+             <div class="col-md-4 mb-4">
+                <div class="card shadow h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                    <img src="img/conference room.jpg" class="card-img-top" alt="Conference Room">
+                    <div class="card-body">
+                        <h5 class="card-title">Conference Room</h5>
+                        <p class="card-text">Our conference room is equipped with the latest technology to make your event a success.</p>
+                        <ul class="list-group-flush">
+                            <li class="list-group item">Audio-Visual Equipment</li>
+                            <li class="list-group item">High-Speed Wi-Fi</li>
+                            <li class="list-group item">Seating for up to 50 people</li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+
+            <!-- Service Card 5: spa -->
+             <div class="col-md-4 mb-4">
+                <div class="card shadow h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                    <img src="img/spa.jpg" class="card-img-top" alt="Spa">
+                    <div class="card-body">
+                        <h5 class="card-title">Spa</h5>
+                        <p class="card-text">Relax and rejuvenate at our spa, offering a range of treatments and massages.</p>
+                        <ul class="list-group-flush">
+                            <li class="list-group item">Massage Therapy</li>
+                            <li class="list-group item">Facials</li>
+                            <li class="list-group item">Body Treatments</li>
+                            <li class="list-group item">Yoga & Meditation</li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+
+            <!-- Service Card 6: bar -->
+             <div class="col-md-4 mb-4">
+                <div class="card shadow h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                    <img src="img/bar.jpg" class="card-img-top" alt="Bar">
+                    <div class="card-body">
+                        <h5 class="card-title">Bar</h5>
+                        <p class="card-text">Enjoy a refreshing cocktail at our bar, serving a wide range of drinks in a relaxed setting.</p>
+                        <ul class="list-group-flush">
+                            <li class="list-group item">Cocktails</li>
+                            <li class="list-group item">Wines & Beers</li>
+                            <li class="list-group item">Bar Snacks</li>
+                            <li class="list-group item">Live Music & Entertainment</li>
+                            <li class="list-group item">Happy Hour Specials</li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+
+            <!-- Service Card 7: swimming pool -->
+             <div class="col-md-4 mb-4">
+                <div class="card shadow h-100 animate__animated animate__fadeInUp animate__delay-3s">
+                    <img src="img/swimming-pool.jpg" class="card-img-top" alt="Swimming Pool">
+                    <div class="card-body">
+                        <h5 class="card-title">Swimming Pool</h5>
+                        <p class="card-text">Take a refreshing dip in our outdoor swimming pool, perfect for relaxing and unwinding.</p>
+                        <ul class="list-group-flush">
+                            <li class="list-group item">Sun Loungers & Cabanas</li>
+                            <li class="list-group item">Poolside Bar & Snacks</li>
+                            <li class="list-group item">Swimming Lessons</li>
+                            <li class="list-group item">Pool Parties & Events</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 8: basketball court -->
+             <div class="col-md-4 mb-4">
+                <div class="card shadow h-100 animate__animated animate__fadeInUp animate__delay-3s">
+                    <img src="img/basketball-court.jpg" class="card-img-top" alt="Basketball Court">
+                    <div class="card-body">
+                        <h5 class="card-title">Basketball Court</h5>
+                        <p class="card-text">Stay active and have fun at our basketball court, perfect for shooting some hoops.</p>
+                        <ul class="list-group-flush">
+                            <li class="list-group item">Basketball Equipment Rental</li>
+                            <li class="list-group item">Private Lessons & Coaching</li>
+                            <li class="list-group item">3-Point Shootout Contests</li>
+                            <li class="list-group item">League Games & Tournaments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- service Card 9: -->
+             <div class="col-md-4 mb-4">
+                <div class="card shadow h-100 animate__animated animate__fadeInUp animate__delay-3s">
+                    <img src="img/room1.jpg" class="card-img-top" alt="Room Reservation">
+                    <div class="card-body">
+                        <h5 class="card-title">Room Reservation</h5>
+                        <p class="card-text">Book your room now and enjoy a comfortable stay with us.</p>
+                        <ul class="list-group-flush">
+                            <li class="list-group item">Deluxe Rooms</li>
+                            <li class="list-group item">Suites</li>
+                            <li class="list-group item">Standard Rooms</li>
+                            <li class="list-group item">Room Service</li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+</section>
+
+<!---------------------------------------------------------------Our Rooms ----------------------------------------->
+<section class="services py-5">
+    <div class="container-fluid service py-5">
+        <div class="container py-5">
+            <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="sub-style">
+                    <h2 class="text-center mb-5">Our Rooms</h2>
+                </div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded">
+                        <div class="service-img rounded-top">
+                            <img src="img/room1.jpg" class="img-fluid rounded-top w-100" alt="">
+                    </div>
+                    <div class="service-content rounded-bottom bg-light p-4">
+                            <div class="service-content-inner">
+                                <h5 class="mb-4">Deluxe Room</h5>
+                                <p class="mb-4">Our Deluxe Rooms offer spacious accommodations with modern amenities, perfect for both business and leisure travelers.</p>
+                                <h4>Amenities Included:</h4>
+                                <ul>
+                                    <li>Free Wi-Fi</li>
+                                    <li>Complimentary Breakfast</li>
+                                    <li>24/7 Room Service</li>
+                                    <li>Fitness Center Access</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded">
+                        <div class="service-img rounded-top">
+                            <img src="img/room2.jpg" class="img-fluid rounded-top w-100" alt="">
+                    </div>
+                    <div class="service-content rounded-bottom bg-light p-4">
+                            <div class="service-content-inner">
+                                <h5 class="mb-4">Deluxe Room</h5>
+                                <p class="mb-4">Our Deluxe Rooms offer spacious accommodations with modern amenities, perfect for both business and leisure travelers.</p>
+                                <h4>Amenities Included:</h4>
+                                <ul>
+                                    <li>Free Wi-Fi</li>
+                                    <li>Complimentary Breakfast</li>
+                                    <li>24/7 Room Service</li>
+                                    <li>Fitness Center Access</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded">
+                        <div class="service-img rounded-top">
+                            <img src="img/room3.jpg" class="img-fluid rounded-top w-100" alt="">
+                    </div>
+                    <div class="service-content rounded-bottom bg-light p-4">
+                            <div class="service-content-inner">
+                                <h5 class="mb-4">Deluxe Room</h5>
+                                <p class="mb-4">Our Deluxe Rooms offer spacious accommodations with modern amenities, perfect for both business and leisure travelers.</p>
+                                <h4>Amenities Included:</h4>
+                                <ul>
+                                    <li>Free Wi-Fi</li>
+                                    <li>Complimentary Breakfast</li>
+                                    <li>24/7 Room Service</li>
+                                    <li>Fitness Center Access</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded">
+                        <div class="service-img rounded-top">
+                            <img src="img/room4.jpg" class="img-fluid rounded-top w-100" alt="">
+                    </div>
+                    <div class="service-content rounded-bottom bg-light p-4">
+                            <div class="service-content-inner">
+                                <h5 class="mb-4">Deluxe Room</h5>
+                                <p class="mb-4">Our Deluxe Rooms offer spacious accommodations with modern amenities, perfect for both business and leisure travelers.</p>
+                                <h4>Amenities Included:</h4>
+                                <ul>
+                                    <li>Free Wi-Fi</li>
+                                    <li>Complimentary Breakfast</li>
+                                    <li>24/7 Room Service</li>
+                                    <li>Fitness Center Access</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!------------------------------------book an activity (you can book multiple)-------------------------->
+<section class="book-activity py-5" id="book-activity">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>Book An Activity</h2>
+            <p class="lead">Choose from a variety of activities to make your stay even more enjoyable.</p>
+        </div>
+
+        <form id="activityBookingForm" class="booking-form">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="activityDate" class="form-label">Activity Date</label>
+                    <input type="date" id="activityDate" name="activityDate" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Activity Type</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="activityGym" name="activityType" value="gym">
+                            <label class="form-check-label" for="activityGym">Gym</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="activitySpa" name="activityType" value="spa">
+                            <label class="form-check-label" for="activitySpa">Spa</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="activitySwimmingPool" name="activityType" value="swimming-pool">
+                            <label class="form-check-label" for="activitySwimmingPool">Swimming Pool</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="activityBasketballCourt" name="activityType" value="basketball-court">
+                            <label class="form-check-label" for="activityBasketballCourt">Basketball Court</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="activityRestaurant" name="activityType" value="restaurant">
+                            <label class="form-check-label" for="activityRestaurant">Restaurant</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="activityBar" name="activityType" value="bar">
+                            <label class="form-check-label" for="activityBar">Bar</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="activityConferenceRoom" name="activityType" value="conference-room">
+                            <label class="form-check-label" for="activityConferenceRoom">Conference Room</label>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="numberOfGuests" class="form-label">Number of Guests</label>
+                    <input type="number" id="numberOfGuests" name="numberOfGuests" class="form-control" min="1" max="100" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" required>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <label for="specialRequests" class="form-label">Special Requests</label>
+                    <textarea id="specialRequests" name="specialRequests" class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Confirm Booking</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+<!-- Book a Room Section -->
+<section class="book-room section-padding bg-light" id="book-room">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>Book A Room</h2>
+            <p class="lead">Reserve your stay with us today!</p>
+        </div>
+
+        <form id="roomBookingForm" class="booking-form">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="checkinDate" class="form-label">Check-in Date</label>
+                    <input type="date" id="checkinDate" name="checkinDate" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="checkoutDate" class="form-label">Check-out Date</label>
+                    <input type="date" id="checkoutDate" name="checkoutDate" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="roomType" class="form-label">Room Type</label>
+                    <select id="roomType" name="roomType" class="form-select" required>
+                        <option value="" disabled selected>Select Room Type</option>
+                        <option value="deluxe">Deluxe Room</option>
+                        <option value="suite">Suite</option>
+                        <option value="standard">Standard Room</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="numberOfGuestsRoom" class="form-label">Number of Guests</label>
+                    <input type="number" id="numberOfGuestsRoom" name="numberOfGuests" class="form-control" min="1" max="10" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="nameRoom" class="form-label">Full Name</label>
+                    <input type="text" id="nameRoom" name="name" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="emailRoom" class="form-label">Email Address</label>
+                    <input type="email" id="emailRoom" name="email" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="phoneRoom" class="form-label">Phone Number</label>
+                    <input type="tel" id="phoneRoom" name="phone" class="form-control" required>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <label for="specialRequestsRoom" class="form-label">Special Requests</label>
+                    <textarea id="specialRequestsRoom" name="specialRequests" class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Confirm Booking</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- <section class="book-room section-padding bg-light" id="book-room">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>Book A Room</h2>
+            <p class="lead">Reserve your stay with us today!</p>
+        </div>
+        <form action="" method="POST" class="booking-form">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="checkinDate" class="form-label">Check-in Date</label>
+                    <input type="date" class="form-control" id="checkinDate" name="checkinDate" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="checkoutDate" class="form-label">Check-out Date</label>
+                    <input type="date" class="form-control" id="checkoutDate" name="checkoutDate" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="roomType" class="form-label">Room Type</label>
+                    <select class="form-select" id="roomType" name="roomType" required>
+                        <option value="" disabled selected>Select Room Type</option>
+                        <option value="deluxe">Deluxe Room</option>
+                        <option value="suite">Suite</option>
+                        <option value="standard">Standard Room</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="numberOfGuests" class="form-label">Number of Guests</label>
+                    <input type="number" class="form-control" id="numberOfGuests" name="numberOfGuests" min="1" max="10" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="specialRequests" class="form-label">Special Requests</label>
+                    <textarea class="form-control" id="specialRequests" name="specialRequests" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Confirm Booking</button>
+            </div>
+        </form>
+    </div>
+</section> -->
+
+
+
+<!-------------------------------------------------------- gallery ------------------------------------------------------------>
+<section class="gallery py-5">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>Our Gallery</h2>
+            <p class="lead">Take a look at our hotel's facilities and amenities.</p>
+        </div>
+
+       <div class="row">
+          <div class="col-md-3 col-sm-6">
+             <div class="gallery_img">
+                <figure><img src="img/gallery1.jpg" alt="#"/></figure>
+             </div>
+             <footer class="blockquote-footer">John Doe</footer>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="gallery_img">
+                <figure><img src="img/gallery2.jpg" alt="#"/></figure>
+             </div>
+             <footer class="blockquote-footer">John Doe</footer>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="gallery_img">
+                <figure><img src="img/gallery3.jpg" alt="#"/></figure>
+             </div>
+             <footer class="blockquote-footer">John Doe</footer>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="gallery_img">
+                <figure><img src="img/gallery4.jpg" alt="#"/></figure>
+             </div>
+             <footer class="blockquote-footer">John Doe</footer>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="gallery_img">
+                <figure><img src="img/gallery5.jpg" alt="#"/></figure>
+             </div>
+             <footer class="blockquote-footer">John Doe</footer>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="gallery_img">
+                <figure><img src="img/gallery6.jpg" alt="#"/></figure>
+             </div>
+             <footer class="blockquote-footer">John Doe</footer>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="gallery_img">
+                <figure><img src="img/gallery7.jpg" alt="#"/></figure>
+             </div>
+             <footer class="blockquote-footer">John Doe</footer>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="gallery_img">
+                <figure><img src="img/gallery8.jpg" alt="#"/></figure>
+             </div>
+             <footer class="blockquote-footer">John Doe</footer>
+          </div>
+       </div>
+    </div>
+</section>
+
+ <!---------------------------------------------------- end gallery---------------------------------------------------------- -->
+
+ <!------------------------------------------testimonial start-------------------------------------->
+<section id="testimonial" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="animate__animated animate__fadeInUp">Testimonials</h2>
+      <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
+        See what our clients have to say about us.
+      </p>
+      <div class="row mt-5">
+        <!-- Testimonial 1 -->
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="testimonial-card">
+                <img src="img/testimonial-img.jpg" alt="Testimonial Image">
+                <p class="testimonial-text">
+                    I have been using this service for a while now and I must say it's been a game changer
+                    for my business. The customer support is top-notch and the features are very user-friendly.
+                </p>
+            </div>
+            <footer class="blockquote-footer">John Doe</footer>
+        </div>
+          <!-- Testimonial 2 -->
+            <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-3s">
+                <div class="testimonial-card">
+                    <img src="img/testimonial-img.jpg" alt="Testimonial Image">
+                    <p class="testimonial-text">
+                        I have been using this service for a while now and I must say it's been a game changer
+                        for my business. The customer support is top-notch and the features are very user-friendly.
+                    </p>
+                </div>
+                <footer class="blockquote-footer">John Doe</footer>
+            </div>
+            <!-- Testimonial 3 -->
+             <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-4s">
+                <div class="testimonial-card">
+                    <img src="img/testimonial-img.jpg" alt="Testimonial Image">
+                    <p class="testimonial-text">
+                        I have been using this service for a while now and I must say it's been a game changer
+                        for my business. The customer support is top-notch and the features are very user-friendly.
+                    </p>
+                </div>
+                <footer class="blockquote-footer">John Doe</footer>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------------------------------------testimonial end-------------------------------------->
+
+
+
+<!---------------------------------------All Modals------------------------------------------------------------------->
+
+<!------------loginModal-->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Login to your Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" action="http://localhost:5000/api/auth/login" method="POST">
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="loginEmail" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <p class="mt-3">Don't have an account? 
+                    <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------------signupModal-->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signupModalLabel">Create an Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="signupForm" action="http://localhost:5000/api/auth/signup" method="POST">
+                    <div class="mb-3">
+                        <label for="first_name" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="signupFirstName" name="first_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="last_name" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="signupLastName" name="last_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="signupEmail" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="signupPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign up</button>
+                </form>
+                <p class="mt-3">Already have an account? 
+                    <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Login here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <script>
+    function checkSubmission(event) {
+        console.log('Form submission triggered!');
+        return false; // Prevent actual submission for testing purposes
+    }
+</script> -->
+
+<!------------contactModal-->
+<!-- <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="php/sendEmail.php" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+<!-----Alert Modal for all alerts-->
+<div id="alertModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="alertModalLabel">Alert</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p id="alertMessage"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer Section -->
+<footer class="footer py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Column 1: Company Logo and Description -->
+            <div class="col-md-3 mb-4">
+                <img src="img/logo.jpg" alt="Shamina Group Logo" class="mb-3" style="width: 100px;">
+                <p>Shamina Group is dedicated to providing exceptional services in consultancy, agriculture, and hospitality. Your trusted partner since 2015.</p>
+            </div>
+            <!-- Column 2: Quick Links -->
+            <div class="col-md-3 mb-4">
+                <h6>Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Our Blog & News</a></li>
+                    <li><a href="#">Our Team</a></li>
+                </ul>
+            </div>
+            <!-- Column 3: Services Links -->
+            <div class="col-md-3 mb-4">
+                <h6>Our Services</h6>
+                <ul class="list-unstyled">
+                    <li><a href="consultancy.html">Consultancy</a></li>
+                    <li><a href="farm.html">Farms</a></li>
+                    <li><a href="#">Hotel</a></li>
+                </ul>
+            </div>
+            <!-- Column 4: Contact Information -->
+            <div class="col-md-3 mb-4">
+                <h6>Contact Information</h6>
+                <p>123 Shamina St., Business District, City</p>
+                <p><a href="malito:info@shaminagroup.com"><i class="fas fa-envelope"></i>info@shaminagroup.com</a></p>
+                <p class="me-2"><a href="tel:+233 24 000 0000"><i class="fas fa-phone-alt"></i>+233 24 000 0000</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Bar -->
+    <div class="bottom-bar text-center py-3">
+        <p class="mb-0">Follow us on social media for updates:</p>
+        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+        <form class="d-inline-block mt-3">
+            <input type="email" placeholder="Subscribe to our newsletter" class="form-control d-inline-block" style="width: 200px;">
+            <button class="btn btn-custom" type="submit">Subscribe</button>
+        </form>
+    </div>
+    <div class="bottom-bar text-center py-2 bg-dark text-white">
+        <small>&copy; 2024 Shamina Group. All Rights Reserved.</small>
+    </div>
+</footer>
+
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/+233263194769" target="_blank" class="whatsapp-float" rel="noopener" title="Contact us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Back-to-Top Button -->
+<button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="js/script.js"></script>
+
+
+    <!-- Initialize WOW.js Library -->
+     <script>
+        new WOW().init();
+     </script>
+</body>
+</html>

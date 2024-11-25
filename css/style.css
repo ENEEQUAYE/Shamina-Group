@@ -1,0 +1,398 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Colors */
+:root {
+    --light-blue: #0079a1;
+    --light-green: #00d000;
+    --light-yellow: #6c682f;
+    --dark-blue: #233c6d;
+    --white: #ffffff;
+    --black: #000000;
+    --custom: #4ad8ff;
+    --grey: #333;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: var(--white);
+}
+
+/* Top Bar */
+.bg-light {
+    background-color: var(--dark-blue) !important;
+    color: var(--white);
+}
+
+.bg-light a {
+    color: var(--white);
+    text-decoration: none;
+}
+.bg-light a i{
+    color: #4ad8ff;
+}
+.bg-light a, .bg-light a i:hover {
+    color: var(--light-green);
+}
+
+.top-bar span {
+    font-size: 14px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1{
+    color: var(--custom);
+    font-weight: bold;
+}
+p{
+    color: var(--grey);
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--custom);
+}
+
+.navbar-nav .nav-link {
+    color: var(--dark-blue);
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--custom);
+}
+
+/* Carousel */
+/* .carousel-item img {
+    height: 60vh;
+    object-fit: cover;
+}
+
+.carousel-caption h5 {
+    font-size: 2rem;
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+} */
+
+/* Carousel */
+.carousel-item {
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption {
+    bottom: 20%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+}
+
+.carousel-caption h5 {
+    font-size: 70px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption p {
+    font-size: 30px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #4ad8ff; /* Preferred color */
+}
+.carousel-caption h5,
+.carousel-caption p {
+    animation: fadeInUp 2s;
+}
+
+/* Custom Button Styling */
+.btn-custom {
+    background-color: var(--light-blue);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: rgb(236, 205, 28);
+    color: rgb(255, 255, 255);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+    padding: 20px 0;
+}
+
+footer a {
+    color: var(--dark-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--light-green);
+}
+
+.footer-column h6 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.bottom-bar {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+/* Back-to-Top and WhatsApp Floating Buttons */
+.back-to-top, .whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--light-green);
+    color: var(--white);
+    border-radius: 50%;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    font-size: 1.5rem;
+    display: none; /* Initially hidden */
+}
+
+.back-to-top:hover, .whatsapp-btn:hover {
+    background-color: var(--dark-blue);
+}
+
+/* Section Headings */
+.about-us h2, .services h2, .why-choose-us h2 {
+    color: var(--dark-blue);
+    font-weight: bold;
+}
+
+/* Card Styling */
+/* .card {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(219, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    translate: scale(1.1);
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+} */
+
+/* Why Choose Us Icons */
+.why-choose-us i {
+    transition: transform 0.3s ease;
+    translate: scale(1.1);
+}
+
+.why-choose-us i:hover {
+    transform: scale(1.1);
+}
+
+/* Section Backgrounds */
+/* .about-us {
+    background-color: var(--white);
+}
+
+.services {
+    background-color: rgb(255, 238, 0);
+}
+
+.why-choose-us {
+    background-color: rgb(255, 255, 255);
+    color: var(--white);
+} */
+
+/* Testimonials Section */
+.testimonials {
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.testimonials h2 {
+    color: var(--dark-blue);
+    font-weight: bold;
+}
+
+.blockquote {
+    font-style: italic;
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item.active .blockquote,
+.carousel-item-next .blockquote,
+.carousel-item-prev .blockquote {
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--light-yellow);
+    color: var(--dark-blue);
+}
+
+.footer h6 {
+    font-weight: bold;
+}
+
+.footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer ul li a {
+    color: var(--dark-blue);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: var(--light-green);
+}
+
+.bottom-bar {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.bottom-bar a {
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.bottom-bar a:hover {
+    color: var(--light-yellow);
+}
+
+/* Newsletter Input Styling */
+.bottom-bar input[type="email"] {
+    padding: 8px;
+    border-radius: 3px;
+    border: none;
+}
+
+.bottom-bar button {
+    padding: 8px 15px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #20c35c;
+}
+
+/* Back-to-Top Button */
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Hidden by default */
+    background-color: var(--dark-blue);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+#backToTopBtn:hover {
+    transform: scale(1.1);
+    background-color: var(--light-green);
+}
+
+/* Consultancy Page Header */
+.consultancy-header {
+    background-color: var(--light-blue);
+    background-image: url('img/consultation.jpg'); /* Example background image */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+
+/* Consultancy Services Section */
+.consultancy-services .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.consultancy-services .card:hover {
+    transform: scale(1.05);
+}
+
+/* Consultancy Contact Form */
+.consultancy-contact {
+    background-color: var(--light-yellow);
+}
+.consultancy-contact .form-control {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.consultancy-contact button {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
