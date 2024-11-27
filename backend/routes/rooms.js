@@ -1,3 +1,4 @@
+//routes/rooms.js
 const express = require('express');
 const router = express.Router();
 const RoomBooking = require('../models/RoomBooking');
@@ -53,6 +54,16 @@ router.post('/book', async (req, res) => {
     } catch (error) {
         console.error('Error booking room:', error);
         res.status(500).json({ error: 'Failed to book room. Please try again.' });
+    }
+});
+
+// GET all room bookings
+router.get('/', async (req, res) => {
+    try {
+        const bookings = await RoomBooking.find();
+        res.status(200).json(bookings);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 });
 

@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const appointmentRoutes = require('./routes/appointments');
-const roomRoutes = require('./routes/rooms');
+const roomsRoutes = require('./routes/rooms');
 const activityRoutes = require('./routes/activity')
+const userRoute = require('./routes/users');
 
 require('dotenv').config();
 
@@ -15,8 +16,9 @@ app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/appointments', appointmentRoutes);
-app.use('/api/room', roomRoutes);
+app.use('/api/rooms', roomsRoutes);
 app.use('/api/activity', activityRoutes);
+app.use('/api/users', userRoute);
 
 const startServer = async () => {
     try {

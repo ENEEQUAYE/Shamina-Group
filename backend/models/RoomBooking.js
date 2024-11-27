@@ -1,3 +1,4 @@
+//models/RoomBooking.js
 const mongoose = require('mongoose');
 
 const RoomBookingSchema = new mongoose.Schema(

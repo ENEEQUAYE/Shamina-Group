@@ -32,4 +32,37 @@ router.post('/login', async (req, res) => {
     }
 });
 
+// POST - Add User
+router.post('/adduser', async (req, res) => {
+    const { first_name, last_name, email, password, position, role } = req.body;
+
+    try {
+        // Check if user already exists
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ message: 'User already exists' });
+        }
+
+        // Hash password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Create new user
+        const newUser = new User({
+            first_name,
+            last_name,
+            email,
+            password: hashedPassword,
+            position,
+            role,
+        });
+
+        await newUser.save();
+        res.status(201).json({ message: 'User added successfully' });
+    } catch (error) {
+        console.error('Error adding user:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+
 module.exports = router;

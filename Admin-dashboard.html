@@ -11,6 +11,7 @@
     <!-- Font Awesome CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/v4-shims.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <!-- Custom CSS -->
      <link rel="stylesheet" href="css/custom.css">
@@ -19,7 +20,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <!-- Favicon -->
-     <link rel="icon" type="image/png" href="img/favicon.png">
+     <link rel="icon" type="image/png" href="img/logo.jpg">
 
     <!-- jQuery -->
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -30,72 +31,449 @@
 
 </head>
 <body>
-    <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Shamina Group</a>
+    <!----------------------------------------------- Top Bar with Contact Info ---------------------------------------------->
+    <div class="bg-light py-2">
+        <div class="container d-flex justify-content-between">
+                <div class="col-md-6-left d-flex">
+                    <p class="me-2"><i class="fas fa-envelope"></i><a href="mailto:info@shaminagroup.com">info@shaminagroup.com</a></p>
+                    <p class="me-2"><i class="fas fa-phone-alt"></i>
+                        <a href="tel:+233 24 000 0000">+233 24 000 0000</a>
+                    </p>
+                </div>
+            <div class="col-md-6-right d-flex">
+                <!------------------------------ 5 Social Media Icons using Font Awesome ---------------------------------->
+                <a href="#" class="text-dark me-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-dark me-2"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" class="text-dark me-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-dark me-2"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-dark me-2"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-dark me-2"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
 
+
+    <!----------------------------------------------- Navbar ---------------------------------------------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><h3>Admin Dashboard</h3></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="consultancy.html">Consultancy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="farm.html">Farms</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="hotel.html">Hotel</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin-dashboard.html">Admin Dashboard</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="myProfile"></i> My Profile</a></li>
+                    <!---------------------------------------------Image placeholder to contain picture of user-->
+                    <li><i class="fas fa-user-circle" id="userImage"></i></li>
                 </ul>
             </div>
         </div>
     </nav>
+    
+    <!----------------------------------------------- Main Area (hoverable sidebar and content area) ---------------------------------------------->
+    
+        <div class="d-flex">
+            <div class="col-md-2 sidebar bg-light" id="sidebar">
+                <!--------------------------------------------- Sidebar with links to Overview, Profile, Manage Users, Add Users, Room Bookings, Activity Bookings, Machine Rental, Farm Sales, Logout------------->
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-target="#overview"><i class="fas fa-home"></i> Overview</a>
+                    </li>
 
-    <!-- Admin Dashboard -->
-     <div class="container mt-5">
-        <h1 class="text-center">Admin Dashboard</h1>
-        <div class="row mt-5">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Manage Home Page</h5>
-                        <p class="card-text">Manage the content of the home page.</p>
-                        <a href="manage-home.html" class="btn btn-primary">Manage</a>
-                    </div>
-                </div>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-target="#profile"><i class="fa fa-user"></i> Profile</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-target="#manageUsers"><i class="fa fa-users"></i> Manage Users</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-target="#addUser"><i class="fa fa-user-plus"></i> Add Users</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-target="#appointments"><i class="fa fa-calendar"></i> Appointments</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-target="#roomBookings"><i class="fa fa-bed"></i> Room Bookings</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-target="#activityBookings"><i class="fa fa-calendar"></i> Activity Bookings</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-target="#machineRental"><i class="fa fa-tractor"></i> Machine Rental</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-target="#farmSales"><i class="fa fa-shopping-cart"></i> Farm Sales</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" id="logoutButton"><i class="fa fa-sign-out"></i> Logout</a>
+                    </li>
+                </ul>
             </div>
 
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Manage Consultancy Page</h5>
+            <div class="col-md-10" id="main-content">
+                <div class="container" id="contentArea">
+
+                    <!--------------------------------------------- Overview ---------------------------------------------->
+                    <div id="overview" class="content-section">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center my-4">Welcome to Your Dashboard</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card bg-primary text-white text-center mb-3">
+                                    <div class="card-body">
+                                        <h3>Consultancy</h3>
+                                        <h1 class="display-4">
+                                            <i class="fas fa-user-tie"></i>
+                                        </h1>
+                                        <a href="manage-consultancy.html" class="btn btn-outline-light">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-success text-white text-center mb-3">
+                                    <div class="card-body">
+                                        <h3>Farm</h3>
+                                        <h1 class="display-4">
+                                            <i class="fas fa-tractor"></i>
+                                        </h1>
+                                        <a href="manage-farm.html" class="btn btn-outline-light">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-warning text-white text-center mb-3">
+                                    <div class="card-body">
+                                        <h3>Hotel</h3>
+                                        <h1 class="display-4">
+                                            <i class="fas fa-hotel"></i>
+                                        </h1>
+                                        <a href="manage-hotel.html" class="btn btn-outline-light">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--------------------------------------------- Profile (contains user's details such as profile picture, name, email, positon etc---------------------------------------------->
+                    <div id="profile" class="content-section">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center my-4">Profile</h1>
+                            </div>
+                        </div>
+                        
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card bg-primary text-white text-center mb-3">
+                                    <div class="card-body">
+                                        <h3>Profile Picture</h3>
+                                        <h1 class="display-4">
+                                            <i class="fas fa-user-circle"></i>
+                                        </h1>
+                                        <a href="#" class="btn btn-outline-light">Change Picture</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-success text-white text-center mb-3">
+                                    <div class="card-body">
+                                        <h3>Name</h3>
+                                        <h1 class="display-4">
+                                            <i class="fas fa-user"></i>
+                                        </h1>
+                                        <a href="#" class="btn btn-outline-light">Change Name</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-warning text-white text-center mb-3">
+                                    <div class="card-body">
+                                        <h3>Email</h3>
+                                        <h1 class="display-4">
+                                            <i class="fas fa-envelope"></i>
+                                        </h1>
+                                        <a href="#" class="btn btn-outline-light">Change Email</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card bg-primary text-white text-center mb-3">
+                                    <div class="card-body">
+                                        <h3>Position</h3>
+                                        <h1 class="display-4">
+                                            <i class="fas fa-user-tag"></i>
+                                        </h1>
+                                        <a href="#" class="btn btn-outline-light">Change Position</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-success text-white text-center mb-3">
+                                    <div class="card-body">
+                                        <h3>Password</h3>
+                                        <h1 class="display-4">
+                                            <i class="fas fa-key"></i>
+                                        </h1>
+                                        <a href="#" class="btn btn-outline-light">Change Password</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mx-auto">
+                                <div class="card bg-white text-dark">
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <img src="img/user.jpg" alt="User Image" class="img-fluid rounded-circle" style="width: 100px;">
+                                        </div>
+                                        <h3 class="text-center my-3">John Doe</h3>
+                                        <p class="text-center">Admin</p>
+                                        <p class="text-center">
+                                            <i class="fas fa-envelope"></i> <a href="mailto:
+                                            john.doe@example.com">john.doe@example.com</a>
+                                        </p>
+
+                                        <p class="text-center">
+                                            <i class="fas fa-phone"></i> <a href="tel:+233 24 000 0000">+233 24 000 0000</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+
+
+                    <!--------------------------------------------- Manage Users (contains list of users and their details and action buttons to edit and delete staff and admin but none for customers) ---------------------------------------------->
+                    <div id="manageUsers" class="content-section">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center my-4">Manage Users</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Position</th>
+                                            <th>Role</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="manageUsersTable">
+                                        <!------------------------to be populated---------->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--------------------------------------------- Add Users (contains form to add new users (staff and admin only)) ---------------------------------------------->
+                    <div id="addUser" class="content-section">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center my-4">Add User</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mx-auto">
+                                <div class="card bg-white text-dark">
+                                    <div class="card-body">
+                                        <form id="addUserForm" class="bg-white" method="POST">
+                                            <div class="form-group mb-3">
+                                                <label for="first_name">First Name</label>
+                                                <input type="text" id="userFirstName" class="form-control" required>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="last_name">Last Name</label>
+                                                <input type="text" id="userLastName" class="form-control" required>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="email">Email</label>
+                                                <input type="email" id="email" class="form-control" required>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="role">Role</label>
+                                                <select id="role" class="form-control" required>
+                                                    <option value="">Select Role</option>
+                                                    <option value="admin">Admin</option>
+                                                    <option value="staff">Staff</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="position">Position</label>
+                                                <input type="text" id="position" class="form-control" required>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="password">Password</label>
+                                                <input type="password" id="password" class="form-control" required>
+                                            </div>
+                                            <button type="button" class="btn btn-primary" onclick="addUser()">Add User</button>
+                                        </form>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--------------------------------------------- Appointments (contains list of appointments and their details and action buttons to edit and delete appointments) ---------------------------------------------->
+                    <div id="appointments" class="content-section">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center my-4">Appointments</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th>Full Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Consultancy Type</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                            <th>Message</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="appointmentsTable">
+                                        <!------------------------to be populated---------->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--------------------------------------------- Room Bookings (contains list of room bookings and their details and action buttons to edit and delete bookings) ---------------------------------------------->
+                    <div id="roomBookings" class="content-section">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center my-4">Room Bookings</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th>Full Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Room Type</th>
+                                            <th>No. of Guests</th>
+                                            <th>Check-In</th>
+                                            <th>Check-Out</th>
+                                            <th>Requests</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="roomBookingsTable">
+                                        <!------------------------to be populated---------->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--------------------------------------------- Activity Bookings (contains list of activity bookings and their details and action buttons to edit and delete bookings) ---------------------------------------------->
+                    <div id="activityBookings" class="content-section">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center my-4">Activity Bookings</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th>Full Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Activity Type(s)</th>
+                                            <th>Date</th>
+                                            <th>Number of Guests</th>
+                                            <th>Special Requests</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="">
+                                        <!------------------------to be populated---------->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+    </div>
     
+    
+    
+    
+    
+<!-- Script for Dynamic Section Switching (show #overview by default)-->
+ <script>
+    const navLinks = document.querySelectorAll('#sidebar a[data-target]');
+    const contentSections = document.querySelectorAll('.content-section');
 
+    navLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('data-target'));
 
+            contentSections.forEach(section => section.classList.add('d-none'));
+            if (target) target.classList.remove('d-none');
+        });
+    });
 
+    document.querySelector('#sidebar a[data-target="#overview"]').click();
+ </script>
 
+ 
 
-
-
-
-
-
-
-
-
-
-
+<!--------------------------------------------- Script for Logout Button ---------------------------------------------->
+<script>
+    const logoutButton = document.querySelector('#logoutButton');
+    logoutButton.addEventListener('click', () => {
+        // Redirect to index.html
+        window.location.href = 'index.html';
+    });
+</script>
+    
+    
+    
+    
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="js/admin.js"></script>
 </body>
 </html>

@@ -1,5 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-
 // Scroll to top button
 var backToTopBtn = document.getElementById("backToTopBtn");
 var rootElement = document.documentElement;
@@ -20,6 +18,7 @@ window.addEventListener("scroll", function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
 
 // Select DOM elements
 const loginButton = document.querySelector('#loginButton');
@@ -244,6 +243,23 @@ document.querySelector('#appointmentForm').addEventListener('submit', async (e) 
         alert('An error occurred while booking your appointment. Please try again.');
     }
 });
+
+//Get all users
+// document.querySelector('#getUsers').addEventListener('click', async () => {
+//     try {
+//         const response = await fetch('http://localhost:5000/api/users');
+//         const users = await response.json();
+//         console.log(users);
+//     } catch (error) {
+//         console.error('Error:', error);
+//     }
+// });
+
+
+ 
+
+
+
 
 
 // Initialize the Navbar on Page Load
