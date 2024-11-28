@@ -435,42 +435,46 @@
             </div>
     </div>
     
-    
-    
-    
-    
-<!-- Script for Dynamic Section Switching (show #overview by default)-->
- <script>
-    const navLinks = document.querySelectorAll('#sidebar a[data-target]');
-    const contentSections = document.querySelectorAll('.content-section');
+    <!-- Edit User Modal -->
+    <!-- Edit User Modal -->
+<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editUserForm">
+                    <input type="hidden" id="editUserId">
+                    <div class="mb-3">
+                        <label for="editFirstName" class="form-label">First Name</label>
+                        <input type="text" id="editFirstName" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editLastName" class="form-label">Last Name</label>
+                        <input type="text" id="editLastName" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editEmail" class="form-label">Email</label>
+                        <input type="email" id="editEmail" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editRole" class="form-label">Role</label>
+                        <select id="editRole" class="form-select" required>
+                            <option value="admin">Admin</option>
+                            <option value="staff">Staff</option>
+                            <option value="customer">Customer</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            const target = document.querySelector(link.getAttribute('data-target'));
 
-            contentSections.forEach(section => section.classList.add('d-none'));
-            if (target) target.classList.remove('d-none');
-        });
-    });
-
-    document.querySelector('#sidebar a[data-target="#overview"]').click();
- </script>
-
- 
-
-<!--------------------------------------------- Script for Logout Button ---------------------------------------------->
-<script>
-    const logoutButton = document.querySelector('#logoutButton');
-    logoutButton.addEventListener('click', () => {
-        // Clear local storage
-        localStorage.clear();
-        // Redirect to index.html
-        window.location.href = 'index.html';
-    });
-</script>
-    
-    
     
     
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

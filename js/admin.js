@@ -1,25 +1,57 @@
+////////////////// Script for Sidebar Navigation
+const navLinks = document.querySelectorAll('#sidebar a[data-target]');
+    const contentSections = document.querySelectorAll('.content-section');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('data-target'));
+
+            contentSections.forEach(section => section.classList.add('d-none'));
+            if (target) target.classList.remove('d-none');
+        });
+    });
+
+document.querySelector('#sidebar a[data-target="#overview"]').click();
+
+//////////////////////////// Script for Logout Button
+const logoutButton = document.querySelector('#logoutButton');
+    logoutButton.addEventListener('click', () => {
+        // Clear local storage
+        localStorage.clear();
+        // Redirect to index.html
+        window.location.href = 'index.html';
+    });
+
+/////////////////////// Script for Active Navigation
+const navItems = document.querySelectorAll('#sidebar a[data-target]');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navItems.forEach(navItem => {
+                navItem.style.backgroundColor = '';
+            });
+            item.style.backgroundColor = '#0079a1';
+        });
+    });
+document.querySelector('#sidebar a[data-target="#overview"]').style.backgroundColor = '#0079a1';
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     fetchUsers();
 });
 
-
-//Function to fetch and populate manageUserTable
+////////////////////////////////////////////////////////////////////Function to fetch and populate manageUserTable //////////////////////////////////////////////////////
 function fetchUsers() {
-    fetch('http://localhost:5000/api/users') // Adjust the URL if needed
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
+    fetch('http://localhost:5000/api/users') // Adjust URL if necessary
+        .then(response => response.json())
         .then(users => {
             const tableBody = document.getElementById('manageUsersTable');
-            tableBody.innerHTML = ''; // Clear any existing rows
+            tableBody.innerHTML = ''; // Clear existing rows
 
             users.forEach((user, index) => {
                 const row = document.createElement('tr');
-
-                // Add table cells
                 row.innerHTML = `
                     <td>${index + 1}</td>
                     <td>${user.first_name} ${user.last_name}</td>
@@ -27,7 +59,7 @@ function fetchUsers() {
                     <td>${user.position || 'N/A'}</td>
                     <td>${user.role}</td>
                     <td>
-                        <button class="btn btn-primary btn-sm" onclick="editUser('${user._id}')">Edit</button>
+                        <button class="btn btn-primary btn-sm" onclick="showEditModal('${user._id}')">Edit</button>
                         <button class="btn btn-danger btn-sm" onclick="deleteUser('${user._id}')">Delete</button>
                     </td>
                 `;
@@ -35,22 +67,69 @@ function fetchUsers() {
             });
         })
         .catch(error => console.error('Error fetching users:', error));
-        
 }
 
-function editUser(userId) {
-    console.log('Edit user:', userId);
-    
-    //update user details
+function showEditModal(userId) {
+    fetch(`http://localhost:5000/api/users/${userId}`) // Fetch user details
+        .then(response => response.json())
+        .then(user => {
+            document.getElementById('editUserId').value = user._id;
+            document.getElementById('editFirstName').value = user.first_name;
+            document.getElementById('editLastName').value = user.last_name;
+            document.getElementById('editEmail').value = user.email;
+            document.getElementById('editRole').value = user.role;
 
-
-
+            const editModal = new bootstrap.Modal(document.getElementById('editUserModal'));
+            editModal.show();
+        })
+        .catch(error => console.error('Error fetching user data:', error));
 }
+
+document.getElementById('editUserForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const userId = document.getElementById('editUserId').value;
+    const updatedUser = {
+        first_name: document.getElementById('editFirstName').value,
+        last_name: document.getElementById('editLastName').value,
+        email: document.getElementById('editEmail').value,
+        role: document.getElementById('editRole').value,
+    };
+
+    fetch(`http://localhost:5000/api/users/${userId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedUser),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('User updated:', data);
+            fetchUsers(); // Refresh table
+            bootstrap.Modal.getInstance(document.getElementById('editUserModal')).hide();
+        })
+        .catch(error => console.error('Error updating user:', error));
+});
 
 function deleteUser(userId) {
-    console.log('Delete user:', userId);
-    // Implement delete functionality
+    if (confirm('Are you sure you want to delete this user?')) {
+        fetch(`http://localhost:5000/api/users/${userId}`, {
+            method: 'DELETE',
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('User deleted:', data);
+                fetchUsers(); // Refresh table
+            })
+            .catch(error => console.error('Error deleting user:', error));
+    }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchUsers();
+});
+
+
+
 
 
 // Fetch room bookings and populate the table
@@ -97,7 +176,7 @@ function fetchRoomBookings() {
 // Call this function on page load
 document.addEventListener('DOMContentLoaded', fetchRoomBookings);
 
-// Fetch and populate appointments
+////////////////////////////////////////////////////////////////////// Fetch and populate appointments////////////////////////////////////////////////////////////////
 fetch('http://localhost:5000/api/appointments')
     .then(response => {
         if (!response.ok) {
@@ -157,7 +236,7 @@ fetch('http://localhost:5000/api/appointments')
     });
 
     
-    // Add User Functionality
+    /////////////////////////////////////////////////////////////////////////////// Add User Functionality //////////////////////////////////////////////////////
     function addUser() {
         const firstName = document.getElementById('userFirstName').value;
         const lastName = document.getElementById('userLastName').value;
@@ -200,7 +279,7 @@ const myProfile = document.querySelector('#myProfile');
 function updateNavbar() {
     const token = localStorage.getItem('token');
     const first_name = localStorage.getItem('first_name'); // User's name saved during login
-    const role = localStorage.getItem('role'); // User's role saved during login
+    
 
     if (token) {
         // User is logged in
@@ -215,7 +294,7 @@ function updateNavbar() {
 document.addEventListener('DOMContentLoaded', updateNavbar);
 
 
-// Fetch and populate activity bookings
+//////////////////////////////////////////////////////////// Fetch and populate activity bookings //////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
     // Function to fetch activity bookings
     async function fetchActivityBookings() {
@@ -285,5 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial fetch of activity bookings
     fetchActivityBookings();
 });
+
 
 

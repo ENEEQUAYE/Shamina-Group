@@ -547,6 +547,9 @@ h2::after{
 .sidebar {
     height: 100vh;
 }
+.sidebar .nav-item:hover {
+    background-color: #0079a1;
+}
 .navbar-brand h3{
     font-size: 1.5rem;
     font-weight: bold;
