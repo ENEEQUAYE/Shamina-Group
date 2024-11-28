@@ -45,6 +45,11 @@ router.post('/book', async (req, res) => {
                     <li><strong>Guests:</strong> ${numberOfGuests}</li>
                     <li><strong>Special Requests:</strong> ${specialRequests || 'None'}</li>
                 </ul>
+                <br>
+                <p>Our representative will reach out to you for further details and payment method</p>
+                <p>Thank you for choosing our hotel!</p>
+                <br>
+                <p>Best Regards,<br>Hotel Management</p>
             `,
         };
 

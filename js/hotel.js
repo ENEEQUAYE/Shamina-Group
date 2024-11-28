@@ -159,3 +159,121 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
 // Initialize the Navbar on Page Load
 document.addEventListener('DOMContentLoaded', updateNavbar);
 
+
+// // Handle Book Consultation Button
+// if (bookConsultationButton) {
+//     bookConsultationButton.addEventListener('click', () => {
+//         const token = localStorage.getItem('token'); // Check if user is logged in
+
+//         if (!token) {
+//             // User is not logged in, show login modal
+//             alert('You need to log in to book a consultation.');
+//             const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+//             loginModal.show();
+//             return;
+//         }
+
+//         //automatially show the appointment modal after login
+//         const appointmentModal = new bootstrap.Modal(document.getElementById('appointmentModal'));
+//         appointmentModal.show();
+//     });
+// }
+
+// Room Booking Form Submission
+// document.getElementById('roomBookingForm').addEventListener('submit', async (event) => {
+//     event.preventDefault();
+//     const formData = new FormData(event.target);
+//     const data = Object.fromEntries(formData.entries());
+
+//     try {
+//         const response = await fetch('http://localhost:5000/api/room/book', {
+//             method: 'POST',
+//             headers: { 'Content-Type': 'application/json' },
+//             body: JSON.stringify(data),
+//         });
+//         const result = await response.json();
+//         if (response.ok) {
+//             alert(result.message || 'Room booked successfully!');
+//             event.target.reset();
+//         } else {
+//             alert(result.error || 'Failed to book room.');
+//         }
+//     } catch (error) {
+//         alert('Error booking room. Please try again.');
+//         console.error(error);
+//     }
+// });
+
+//Activity Booking
+document.getElementById('activityBookingForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    // Collect form data
+    const formData = new FormData(event.target);
+    const activityType = Array.from(
+        document.querySelectorAll('input[name="activityType"]:checked')
+    ).map((checkbox) => checkbox.value);
+
+    // Prepare payload
+    const data = { 
+        ...Object.fromEntries(formData.entries()), 
+        activityType 
+    };
+
+    try {
+        const response = await fetch('http://localhost:5000/api/activity/book', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+        const result = await response.json();
+        alert(result.message || 'Activity booked successfully!');
+        event.target.reset();
+    } catch (error) {
+        alert('Error booking activity. Please try again.');
+    }
+});
+
+// Room Booking Form Submission
+document.getElementById('roomBookingForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const checkinDate = document.getElementById('checkinDate').value;
+    const checkoutDate = document.getElementById('checkoutDate').value;
+    const roomType = document.getElementById('roomType').value;
+    const numberOfGuests = document.getElementById('numberOfGuestsRoom').value;
+    const name = document.getElementById('nameRoom').value;
+    const email = document.getElementById('emailRoom').value;
+    const phone = document.getElementById('phoneRoom').value;
+    const specialRequests = document.getElementById('specialRequestsRoom').value;
+
+    try {
+        const response = await fetch('http://localhost:5000/api/rooms/book', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                checkinDate,
+                checkoutDate,
+                roomType,
+                numberOfGuests,
+                name,
+                email,
+                phone,
+                specialRequests,
+            }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert(result.message || 'Room booking successful!');
+            document.getElementById('roomBookingForm').reset();
+        } else {
+            alert(result.error || 'Failed to book room. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error booking room:', error);
+        alert('An error occurred while booking the room.');
+    }
+});
+

@@ -1,400 +1,155 @@
-<!---------------------Admin Dashboard to manage contents of index.html, consultancy.html, farm.html, hotel.html-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin | Shamina Group</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+//hotel.html
+<!-- Book a Room Section -->
+<section class="book-room section-padding bg-light" id="book-room">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>Book A Room</h2>
+            <p class="lead">Reserve your stay with us today!</p>
+        </div>
 
-    <!-- Font Awesome CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/v4-shims.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-    <!-- Custom CSS -->
-     <link rel="stylesheet" href="css/custom.css">
-
-    <!-- WOW CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-    <!-- Favicon -->
-     <link rel="icon" type="image/png" href="img/favicon.png">
-
-    <!-- jQuery -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Bootstrap JS -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-
-</head>
-<body>
-    <!----------------------------------------------- Top Bar with Contact Info ---------------------------------------------->
-    <div class="bg-light py-2">
-        <div class="container d-flex justify-content-between">
-                <div class="col-md-6-left d-flex">
-                    <p class="me-2"><i class="fas fa-envelope"></i><a href="mailto:info@shaminagroup.com">info@shaminagroup.com</a></p>
-                    <p class="me-2"><i class="fas fa-phone-alt"></i>
-                        <a href="tel:+233 24 000 0000">+233 24 000 0000</a>
-                    </p>
+        <form id="roomBookingForm" class="booking-form">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="checkinDate" class="form-label">Check-in Date</label>
+                    <input type="date" id="checkinDate" name="checkinDate" class="form-control" required>
                 </div>
-            <div class="col-md-6-right d-flex">
-                <!------------------------------ 5 Social Media Icons using Font Awesome ---------------------------------->
-                <a href="#" class="text-dark me-2"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-dark me-2"><i class="fab fa-x-twitter"></i></a>
-                <a href="#" class="text-dark me-2"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-dark me-2"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-dark me-2"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="text-dark me-2"><i class="fab fa-tiktok"></i></a>
-            </div>
-        </div>
-    </div>
+                <div class="col-md-6 mb-3">
+                    <label for="checkoutDate" class="form-label">Check-out Date</label>
+                    <input type="date" id="checkoutDate" name="checkoutDate" class="form-control" required>
+                </div>
 
+                <div class="col-md-6 mb-3">
+                    <label for="roomType" class="form-label">Room Type</label>
+                    <select id="roomType" name="roomType" class="form-select" required>
+                        <option value="" disabled selected>Select Room Type</option>
+                        <option value="deluxe">Deluxe Room</option>
+                        <option value="suite">Suite</option>
+                        <option value="standard">Standard Room</option>
+                    </select>
+                </div>
 
-    <!----------------------------------------------- Navbar ---------------------------------------------->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html"><h3>Admin Dashboard</h3></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" id="myProfile"></i> My Profile</a></li>
-                    <!---------------------------------------------Image placeholder to contain picture of user-->
-                    <li><i class="fas fa-user-circle" id="userImage"></i></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <!----------------------------------------------- Main Area (hoverable sidebar and content area) ---------------------------------------------->
-    
-        <div class="d-flex">
-            <div class="col-md-2 sidebar bg-light" id="sidebar">
-                <!--------------------------------------------- Sidebar with links to Overview, Profile, Manage Users, Add Users, Room Bookings, Activity Bookings, Machine Rental, Farm Sales, Logout------------->
-                <ul class="nav flex-column">
-                    <li class="nav-item active">
-                        <a class="nav-link text-white" href="#" onclick="showOverview()"><i class="fa fa-home"></i> Overview</a>
-                    </li>
+                <div class="col-md-6 mb-3">
+                    <label for="numberOfGuestsRoom" class="form-label">Number of Guests</label>
+                    <input type="number" id="numberOfGuestsRoom" name="numberOfGuests" class="form-control" min="1" max="10" required>
+                </div>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#" onclick="showProfile()"><i class="fa fa-user"></i> Profile</a>
-                    </li>
+                <div class="col-md-6 mb-3">
+                    <label for="nameRoom" class="form-label">Full Name</label>
+                    <input type="text" id="nameRoom" name="name" class="form-control" required>
+                </div>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#" onclick="showManageUsers()"><i class="fa fa-users"></i> Manage Users</a>
-                    </li>
+                <div class="col-md-6 mb-3">
+                    <label for="emailRoom" class="form-label">Email Address</label>
+                    <input type="email" id="emailRoom" name="email" class="form-control" required>
+                </div>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#" onclick="showAddUsers()"><i class="fa fa-user-plus"></i> Add Users</a>
-                    </li>
+                <div class="col-md-6 mb-3">
+                    <label for="phoneRoom" class="form-label">Phone Number</label>
+                    <input type="tel" id="phoneRoom" name="phone" class="form-control" required>
+                </div>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#" onclick="showRoomBookings()"><i class="fa fa-bed"></i> Room Bookings</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#" onclick="showActivityBookings()"><i class="fa fa-calendar"></i> Activity Bookings</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#" onclick="showMachineRental()"><i class="fa fa-tractor"></i> Machine Rental</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#" onclick="showFarmSales()"><i class="fa fa-shopping-cart"></i> Farm Sales</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#" onclick="showLogout()"><i class="fa fa-sign-out"></i> Logout</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-md-10" id="main-content">
-                <div class="container" id="contentArea">
-
-                    <!--------------------------------------------- Overview ---------------------------------------------->
-                    <div id="overview" class="content-section">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1 class="text-center my-4">Welcome to Your Dashboard</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card bg-primary text-white text-center mb-3">
-                                    <div class="card-body">
-                                        <h3>Consultancy</h3>
-                                        <h1 class="display-4">
-                                            <i class="fas fa-user-tie"></i>
-                                        </h1>
-                                        <a href="manage-consultancy.html" class="btn btn-outline-light">View</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card bg-success text-white text-center mb-3">
-                                    <div class="card-body">
-                                        <h3>Farm</h3>
-                                        <h1 class="display-4">
-                                            <i class="fas fa-tractor"></i>
-                                        </h1>
-                                        <a href="manage-farm.html" class="btn btn-outline-light">View</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card bg-warning text-white text-center mb-3">
-                                    <div class="card-body">
-                                        <h3>Hotel</h3>
-                                        <h1 class="display-4">
-                                            <i class="fas fa-hotel"></i>
-                                        </h1>
-                                        <a href="manage-hotel.html" class="btn btn-outline-light">View</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--------------------------------------------- Profile (contains user's details such as profile picture, name, email, positon etc---------------------------------------------->
-                    <div id="profile" class="content-section">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1 class="text-center my-4">My Profile</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card bg-primary text-white text-center mb-3">
-                                    <div class="card-body">
-                                        <h3>Profile Picture</h3>
-                                        <h1 class="display-4">
-                                            <i class="fas fa-user-circle"></i>
-                                        </h1>
-                                        <a href="#" class="btn btn-outline-light">Change Picture</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card bg-success text-white text-center mb-3">
-                                    <div class="card-body">
-                                        <h3>Name</h3>
-                                        <h1 class="display-4">
-                                            <i class="fas fa-user"></i>
-                                        </h1>
-                                        <a href="#" class="btn btn-outline-light">Change Name</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card bg-warning text-white text-center mb-3">
-                                    <div class="card-body">
-                                        <h3>Email</h3>
-                                        <h1 class="display-4">
-                                            <i class="fas fa-envelope"></i>
-                                        </h1>
-                                        <a href="#" class="btn btn-outline-light">Change Email</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card bg-primary text-white text-center mb-3">
-                                    <div class="card-body">
-                                        <h3>Position</h3>
-                                        <h1 class="display-4">
-                                            <i class="fas fa-user-tag"></i>
-                                        </h1>
-                                        <a href="#" class="btn btn-outline-light">Change Position</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card bg-success text-white text-center mb-3">
-                                    <div class="card-body">
-                                        <h3>Password</h3>
-                                        <h1 class="display-4">
-                                            <i class="fas fa-key"></i>
-                                        </h1>
-                                        <a href="#" class="btn btn-outline-light">Change Password</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--------------------------------------------- Manage Users (contains list of users and their details and action buttons to edit and delete staff and admin but none for customers) ---------------------------------------------->
-                    <div id="manageUsers" class="content-section">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1 class="text-center my-4">Manage Users</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>S/N</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Position</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="users">
-                                        <!------------------------to be populated---------->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--------------------------------------------- Add Users (contains form to add new users (staff and admin only)) ---------------------------------------------->
-                    <div id="addUser" class="content-section">
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1 class="text-center my-4">Add User</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mx-auto">
-                                <div class="card bg-white text-dark">
-                                    <div class="card-body">
-                                        <form id="addUserForm" class="bg-white">
-                                            <!---------first name------>
-                                            <div class="form-group mb-3">
-                                                <label for="first_name">First Name</label>
-                                                <input type="text" id="userFirstName" class="form-control" required>
-                                            </div>
-                                            <div class="form-group mb-3">
-                                                <label for="last_name">Last Name</label>
-                                                <input type="text" id="userLastName" class="form-control" required>
-                                            </div>
-                                            <div class="form-group mb-3">
-                                                <label for="email">Email</label>
-                                                <input type="email" id="email" class="form-control" required>
-                                            </div>
-                                            <div class="form-group mb-3">
-                                                <label for="role">Role</label>
-                                                <select id="role " class="form-control" required>
-                                                    <option value="">Select Role</option>
-                                                    <option value="admin">Admin</option>
-                                                    <option value="staff">Staff</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group mb-3">
-                                                <label for="position">Position</label>
-                                                <input type="text" id="position" class="form-control" required>
-                                            </div>
-                                            <div class="form-group mb-3">
-                                                <label for="password">Password</label>
-                                                <input type="password" id="password" class="form-control" required>
-                                            </div>
-                                        </form>
-                                        <button class="btn btn-primary" onclick="addUser()">Add User</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--------------------------------------------- Room Bookings (contains list of room bookings and their details and action buttons to edit and delete bookings) ---------------------------------------------->
-                    <div id="roomBookings" class="content-section">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1 class="text-center my-4">Room Bookings</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>S/N</th>
-                                            <th>Full Name</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
-                                            <th>Room Type</th>
-                                            <th>Number of Guests</th>
-                                            <th>Check In</th>
-                                            <th>Check Out</th>
-                                            <th>Special Requests</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="roomBookings">
-                                        <!------------------------to be populated---------->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--------------------------------------------- Activity Bookings (contains list of activity bookings and their details and action buttons to edit and delete bookings) ---------------------------------------------->
-                    <div id="activityBookings" class="content-section">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1 class="text-center my-4">Activity Bookings</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>S/N</th>
-                                            <th>Full Name</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
-                                            <th>Activity Type(s)</th>
-                                            <th>Date</th>
-                                            <th>Number of Guests</th>
-                                            <th>Special Requests</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="activityBookings">
-                                        <!------------------------to be populated---------->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                                        
-                    
-                
-                
-                
-                
-                
-                
+                <div class="col-md-12 mb-3">
+                    <label for="specialRequestsRoom" class="form-label">Special Requests</label>
+                    <textarea id="specialRequestsRoom" name="specialRequests" class="form-control" rows="3"></textarea>
                 </div>
             </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Confirm Booking</button>
+            </div>
+        </form>
     </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script src="js/script.js"></script>
-</body>
-</html>
+</section>
+
+
+//backend/models/RoomBookings.js
+const mongoose = require('mongoose');
+
+const RoomBookingSchema = new mongoose.Schema(
+    {
+        checkinDate: { type: Date, required: true },
+        checkoutDate: { type: Date, required: true },
+        roomType: { type: String, required: true },
+        numberOfGuests: { type: Number, required: true },
+        name: { type: String, required: true },
+        email: { type: String, required: true },
+        phone: { type: String, required: true },
+        specialRequests: { type: String },
+    },
+    { timestamps: true }
+);
+
+module.exports = mongoose.model('RoomBooking', RoomBookingSchema);
+
+
+//backend/routes/rooms.js
+//routes/rooms.js
+const express = require('express');
+const router = express.Router();
+const RoomBooking = require('../models/RoomBooking');
+const nodemailer = require('nodemailer');
+
+router.post('/book', async (req, res) => {
+    const { checkinDate, checkoutDate, roomType, numberOfGuests, name, email, phone, specialRequests } = req.body;
+
+    try {
+        // Save booking to the database
+        const booking = new RoomBooking({
+            checkinDate,
+            checkoutDate,
+            roomType,
+            numberOfGuests,
+            name,
+            email,
+            phone,
+            specialRequests,
+        });
+        await booking.save();
+
+        // Send confirmation email
+        const transporter = nodemailer.createTransport({
+            service: 'Gmail',
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS,
+            },
+        });
+
+        const mailOptions = {
+            from: process.env.EMAIL_USER,
+            to: email,
+            subject: 'Room Booking Confirmation',
+            html: `
+                <h1>Booking Confirmation</h1>
+                <p>Dear ${name},</p>
+                <p>Your room booking has been confirmed:</p>
+                <ul>
+                    <li><strong>Check-in Date:</strong> ${checkinDate}</li>
+                    <li><strong>Check-out Date:</strong> ${checkoutDate}</li>
+                    <li><strong>Room Type:</strong> ${roomType}</li>
+                    <li><strong>Guests:</strong> ${numberOfGuests}</li>
+                    <li><strong>Special Requests:</strong> ${specialRequests || 'None'}</li>
+                </ul>
+            `,
+        };
+
+        await transporter.sendMail(mailOptions);
+
+        res.status(201).json({ message: 'Room booking confirmed, confirmation email sent.' });
+    } catch (error) {
+        console.error('Error booking room:', error);
+        res.status(500).json({ error: 'Failed to book room. Please try again.' });
+    }
+});
+
+// GET all room bookings
+router.get('/', async (req, res) => {
+    try {
+        const bookings = await RoomBooking.find();
+        res.status(200).json(bookings);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+module.exports = router;

@@ -62,8 +62,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" id="myProfile"></i> My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="myProfile">My Profile</a></li>
                     <!---------------------------------------------Image placeholder to contain picture of user-->
                     <li><i class="fas fa-user-circle" id="userImage"></i></li>
                 </ul>
@@ -300,18 +299,18 @@
                             <div class="col-md-6 mx-auto">
                                 <div class="card bg-white text-dark">
                                     <div class="card-body">
-                                        <form id="addUserForm" class="bg-white" method="POST">
+                                        <form id="addUserForm" class="bg-white" action="http://localhost:5000/api/auth/adduser" method="POST" >
                                             <div class="form-group mb-3">
                                                 <label for="first_name">First Name</label>
-                                                <input type="text" id="userFirstName" class="form-control" required>
+                                                <input type="text" id="userFirstName" class="form-control" required title="First Name" placeholder="Enter your first name">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="last_name">Last Name</label>
-                                                <input type="text" id="userLastName" class="form-control" required>
+                                                <input type="text" id="userLastName" class="form-control" required title="Last Name" placeholder="Enter your last name">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="email">Email</label>
-                                                <input type="email" id="email" class="form-control" required>
+                                                <input type="email" id="userEmail" class="form-control" required title="Email" placeholder="Enter your email">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="role">Role</label>
@@ -323,11 +322,11 @@
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="position">Position</label>
-                                                <input type="text" id="position" class="form-control" required>
+                                                <input type="text" id="position" class="form-control" required title="Position" placeholder="Enter your position">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="password">Password</label>
-                                                <input type="password" id="password" class="form-control" required>
+                                                <input type="password" id="userPassword" class="form-control" required title="Password" placeholder="Enter your password">
                                             </div>
                                             <button type="button" class="btn btn-primary" onclick="addUser()">Add User</button>
                                         </form>                                        
@@ -423,7 +422,7 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="">
+                                    <tbody id="activityBookingsTable">
                                         <!------------------------to be populated---------->
                                     </tbody>
                                 </table>
@@ -464,6 +463,8 @@
 <script>
     const logoutButton = document.querySelector('#logoutButton');
     logoutButton.addEventListener('click', () => {
+        // Clear local storage
+        localStorage.clear();
         // Redirect to index.html
         window.location.href = 'index.html';
     });

@@ -8,10 +8,14 @@ const User = require('../models/User');
 router.post('/signup', async (req, res) => {
     try {
         const { first_name, last_name, email, password } = req.body;
-        const hashedPassword = await bcrypt.hash(password, 10);
-        const user = new User({ first_name, last_name, email, password: hashedPassword });
+        const user = new User({
+            first_name,
+            last_name,
+            email: email.trim().toLowerCase(),
+            password,
+        });
         await user.save();
-        res.status(201).json({ message: 'User created successfully' });
+        res.status(201).json({ message: 'Signup successful!' });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
@@ -21,48 +25,53 @@ router.post('/signup', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
-        const user = await User.findOne({ email });
+        const user = await User.findOne({ email: email.trim().toLowerCase() });
+
         if (!user || !(await bcrypt.compare(password, user.password))) {
             return res.status(401).json({ error: 'Invalid email or password' });
         }
-        const token = jwt.sign({ id: user._id, first_name: user.first_name }, 'mYv3ry$ecure!SeCr3tKeY1234567890', { expiresIn: '1h' });
-        res.status(200).json({ token, first_name: user.first_name });
+
+        const token = jwt.sign(
+            { id: user._id, role: user.role },
+            'mYv3ry$ecure!SeCr3tKeY1234567890',
+            { expiresIn: '1h' }
+        );
+
+        res.status(200).json({ 
+            message: 'Login successful!', 
+            token, 
+            role: user.role, 
+            first_name: user.first_name // Include first_name in the response
+        });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
 
-// POST - Add User
-router.post('/adduser', async (req, res) => {
-    const { first_name, last_name, email, password, position, role } = req.body;
 
+// Add User Route (Admin Functionality)
+router.post('/adduser', async (req, res) => {
     try {
-        // Check if user already exists
-        const existingUser = await User.findOne({ email });
+        const { first_name, last_name, email, password, role, position } = req.body;
+
+        const existingUser = await User.findOne({ email: email.trim().toLowerCase() });
         if (existingUser) {
-            return res.status(400).json({ message: 'User already exists' });
+            return res.status(400).json({ error: 'User already exists!' });
         }
 
-        // Hash password
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        // Create new user
-        const newUser = new User({
+        const user = new User({
             first_name,
             last_name,
-            email,
-            password: hashedPassword,
-            position,
+            email: email.trim().toLowerCase(),
+            password,
             role,
+            position,
         });
-
-        await newUser.save();
-        res.status(201).json({ message: 'User added successfully' });
-    } catch (error) {
-        console.error('Error adding user:', error);
-        res.status(500).json({ error: 'Internal server error' });
+        await user.save();
+        res.status(201).json({ message: 'User added successfully!' });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 });
-
 
 module.exports = router;
