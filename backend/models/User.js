@@ -1,4 +1,4 @@
-// models/User.js
+// backend/models/User.js
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
@@ -9,7 +9,10 @@ const UserSchema = new mongoose.Schema({
     password: { type: String, required: true },
     position: { type: String, default: 'N/A' },
     role: { type: String, enum: ['admin', 'staff', 'customer'], default: 'customer' },
+    phone: { type: String, default: null },
+    profilePic: { type: String, default: 'img/user.jpg' },
 }, { timestamps: true });
+
 
 // Hash password before saving
 UserSchema.pre('save', async function (next) {

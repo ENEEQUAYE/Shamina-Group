@@ -1,12 +1,16 @@
+// backend/server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const path = require('path');
 const authRoutes = require('./routes/auth');
 const appointmentRoutes = require('./routes/appointments');
-const roomsRoutes = require('./routes/rooms');
+const roomBookingRoutes = require('./routes/roomBookings');
 const activityRoutes = require('./routes/activity');
 const userRoute = require('./routes/users');
+const roomsRoute = require('./routes/rooms');
+const guestsRoutes = require('./routes/guests')
+const reservationRoutes = require('./routes/reservations');
+
 
 require('dotenv').config();
 
@@ -15,19 +19,17 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-// app.use(express.static(path.join(__dirname, '..'))); // Serve static files
 
 // API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/appointments', appointmentRoutes);
-app.use('/api/rooms', roomsRoutes);
+app.use('/api/roomBooking', roomBookingRoutes);
 app.use('/api/activity', activityRoutes);
 app.use('/api/users', userRoute);
+app.use('/api/rooms', roomsRoute);
+app.use('/api/guests', guestsRoutes);
+app.use('/api/reservations', reservationRoutes);
 
-// // Custom route for Admin Dashboard
-// app.get('/admin-dashboard', (req, res) => {
-//     res.sendFile(path.join(__dirname, '..', 'Admin-dashboard.html'));
-// });
 
 // MongoDB connection and server startup
 const startServer = async () => {

@@ -8,6 +8,9 @@
     --black: #000000;
     --custom: #4ad8ff;
     --grey: #333;
+    --green: #81c408;
+    --bs-primary: #81c408;
+    --bs-secondary: #ff8a04be;
 }
 
 body{
@@ -26,6 +29,9 @@ h2::after{
     height: 5px;
     background-color: var(--custom);
     margin: 10px auto;
+}
+a{
+    text-decoration: none;
 }
 
 /*------------------Top bar-----------------*/
@@ -545,7 +551,8 @@ h2::after{
 
 /*---------------------------Dashboard-----------------------------*/
 .sidebar {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
 }
 .sidebar .nav-item:hover {
     background-color: #0079a1;
@@ -566,6 +573,157 @@ h2::after{
 .table tbody tr td {
     text-align: center;
 }
+/*---------------------------------------------------------------------Farm styling-------------------------------------------------*/
+/*------------------Top bar Farm-----------------*/
+.bg-light-farm{
+    background-color: var(--green) !important;
+    color: var(--white);
+}
+
+.bg-light-farm a, .bg-light a i{
+    color: var(--white);
+    text-decoration: none;
+    margin: 5px;
+}
+.bg-light-farm a:hover{
+    color: var(--dark-blue);
+}
+.bg-light-farm a i:hover{
+    color: var(--white);
+}
+
+/*------------------Navbar Farm-----------------*/
+.navbar-brand-farm{
+    text-decoration: none;
+}
+.navbar-brand-farm h1{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #81c408
+}
+.navbar-brand-farm span{
+   text-decoration: none;
+}
+
+/*** featurs Start ***/
+.featurs .featurs-item .featurs-icon {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.featurs .featurs-item .featurs-icon::after {
+    content: "";
+    width: 35px;
+    height: 35px;
+    background: var(--bs-secondary);
+    position: absolute;
+    bottom: -10px;
+    transform: translate(-50%);
+    transform: rotate(45deg);
+    background: var(--bs-secondary);
+    
+}
+/*** featurs End ***/
+
+.features .card i{
+    font-size: 4.0rem;
+    color: white;
+    padding: 20px;
+    background-color: var(--bs-secondary);
+    border-radius: 50%;
+}
+
+.features .card-body{
+    min-height: 100hv;
+}
+
+.name-top{
+   background-color: var(--bs-secondary);
+}
+
+/*** Fruits Start ***/
+
+.tab-class .nav-item a.active {
+    background: var(--bs-secondary) !important;
+}
+
+.tab-class .nav-item a.active span {
+    color: var(--bs-white) !important; 
+}
+
+.fruite-categorie .fruite-name {
+    line-height: 40px;
+}
+
+.fruite-categorie .fruite-name a {
+    transition: 0.5s;
+}
+.fruite-categorie .fruite-name a:hover {
+    color: var(--bs-secondary);
+}
+.fruite-item {
+    min-height: 50vh;
+    max-height: auto;
+    transition: 0.5s;
+}
+.fruite-item:hover {
+    box-shadow: 0 0 55px rgba(0, 0, 0, 0.4);
+}
+
+.fruite-item .fruite-img {
+    overflow: hidden;
+    transition: 0.5s;
+    border-radius: 10px 10px 0 0;
+}
+
+.fruite-item .fruite-img img {
+    transition: 0.5s;
+}
+
+.fruite-item .fruite-img img:hover {
+    transform: scale(1.3);
+}
+/*** Fruits End ***/
+
+/*** service Start ***/
+/* .service .service-item .service-content {
+    position: relative;
+    width: 250px; 
+    height: 130px; 
+    top: -50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+} */
+
+/*** service End ***/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (max-width: 768px) {

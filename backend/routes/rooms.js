@@ -1,74 +1,60 @@
-//routes/rooms.js
+// backend/routes/rooms.js
 const express = require('express');
 const router = express.Router();
-const RoomBooking = require('../models/RoomBooking');
-const nodemailer = require('nodemailer');
+const Room = require('../models/Room');
+const Guest = require('../models/Guest');
 
-router.post('/book', async (req, res) => {
-    const { checkinDate, checkoutDate, roomType, numberOfGuests, name, email, phone, specialRequests } = req.body;
-
+// Get all rooms
+router.get('/', async (req, res) => {
     try {
-        // Save booking to the database
-        const booking = new RoomBooking({
-            checkinDate,
-            checkoutDate,
-            roomType,
-            numberOfGuests,
-            name,
-            email,
-            phone,
-            specialRequests,
-        });
-        await booking.save();
-
-        // Send confirmation email
-        const transporter = nodemailer.createTransport({
-            service: 'Gmail',
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
-            },
-        });
-
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: email,
-            subject: 'Room Booking Confirmation',
-            html: `
-                <h1>Booking Confirmation</h1>
-                <p>Dear ${name},</p>
-                <p>Your room booking has been confirmed:</p>
-                <ul>
-                    <li><strong>Check-in Date:</strong> ${checkinDate}</li>
-                    <li><strong>Check-out Date:</strong> ${checkoutDate}</li>
-                    <li><strong>Room Type:</strong> ${roomType}</li>
-                    <li><strong>Guests:</strong> ${numberOfGuests}</li>
-                    <li><strong>Special Requests:</strong> ${specialRequests || 'None'}</li>
-                </ul>
-                <br>
-                <p>Our representative will reach out to you for further details and payment method</p>
-                <p>Thank you for choosing our hotel!</p>
-                <br>
-                <p>Best Regards,<br>Hotel Management</p>
-            `,
-        };
-
-        await transporter.sendMail(mailOptions);
-
-        res.status(201).json({ message: 'Room booking confirmed, confirmation email sent.' });
+        const rooms = await Room.find();
+        res.status(200).json(rooms);
     } catch (error) {
-        console.error('Error booking room:', error);
-        res.status(500).json({ error: 'Failed to book room. Please try again.' });
+        res.status(500).json({ message: 'Failed to fetch rooms', error });
     }
 });
 
-// GET all room bookings
-router.get('/', async (req, res) => {
+// Get room by ID
+router.get('/:id', async (req, res) => {
     try {
-        const bookings = await RoomBooking.find();
-        res.status(200).json(bookings);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
+        const room = await Room.findById(req.params.id);
+        if (!room) {
+            return res.status(404).json({ message: 'Room not found' });
+            }
+        res.status(200).json(room);
+    } catch (error) {
+        res.status(500).json({ message: 'Failed to fetch room', error });
+    }
+});
+
+
+// Check-in a guest with validations
+router.post('/check-in', async (req, res) => {
+    const { guestName, guestContact, guestID, roomId, checkInDate } = req.body;
+
+    if (!guestName || !guestContact || !guestID || !roomId || !checkInDate) {
+        return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    try {
+        const room = await Room.findById(roomId);
+        if (!room) return res.status(404).json({ message: 'Room not found' });
+
+        if (room.status !== 'Available') {
+            return res.status(400).json({ message: 'Room is not available for check-in' });
+        }
+
+        // Update room status
+        room.status = 'Occupied';
+        await room.save();
+
+        // Save guest details
+        const newGuest = new Guest({ guestName, guestContact, guestID, roomId, checkInDate });
+        await newGuest.save();
+
+        res.status(200).json({ message: 'Guest checked in successfully', guest: newGuest });
+    } catch (error) {
+        res.status(500).json({ message: 'Check-in failed', error });
     }
 });
 

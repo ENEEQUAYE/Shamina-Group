@@ -22,20 +22,22 @@ const myProfile = document.querySelector('#myProfile');
 // Update Navbar Based on Login State
 function updateNavbar() {
     const token = localStorage.getItem('token');
-    const first_name = localStorage.getItem('first_name'); // User's name saved during login
-    const role = localStorage.getItem('role'); // User's role saved during login
+    const user = JSON.parse(localStorage.getItem('user'));  // Parse the user object
 
     console.log('Token:', token);
-    console.log('First Name:', first_name);
-    console.log('Role:', role);
+    console.log('User:', user);
 
-    if (token) {
+    if (token && user) {
+        // Check if user object exists before accessing properties
+        const first_name = user.first_name || 'User';
+        const role = user.role || 'customer';
+
         loginButton.innerHTML = '<i class="fas fa-sign-out-alt"></i> Logout';
         loginButton.removeAttribute('data-bs-toggle');
         loginButton.removeAttribute('data-bs-target');
         loginButton.onclick = logout;
 
-        myProfile.innerHTML = `<i class="fas fa-user-circle"></i> ${first_name || 'My Profile'}`;
+        myProfile.innerHTML = `<i class="fas fa-user-circle"></i> ${first_name}`;
         myProfile.style.cursor = 'pointer';
         myProfile.onclick = () => {
             if (role === 'admin') {
@@ -58,20 +60,19 @@ function updateNavbar() {
     }
 }
 
-
 // Logout Function
 function logout() {
     // Clear user data from localStorage
     localStorage.removeItem('token');
-    localStorage.removeItem('first_name');
-    localStorage.removeItem('role');
+    localStorage.removeItem('user');
     alert('You have successfully logged out.');
 
     // Reload page to reset UI
     location.reload();
 }
 
-// Login Functionality
+
+////////////////////////////////////////////////// Login Functionality //////////////////////////////////////////////////
 document.getElementById('loginForm').addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -90,24 +91,25 @@ document.getElementById('loginForm').addEventListener('submit', (event) => {
             if (data.error) {
                 alert(data.error);
             } else {
-                // Ensure the first_name is being saved correctly
-                if (data.first_name) {
-                    localStorage.setItem('first_name', data.first_name);
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('role', data.role);
+                const { user, token } = data;
+
+                if (user) {
+                    // Store user details and token in localStorage
+                    localStorage.setItem('token', token);
+                    localStorage.setItem('user', JSON.stringify(user));
 
                     alert(data.message || 'Login successful!');
+
+                    // Hide the login modal
+                    const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+                    if (loginModal) loginModal.hide();
+
+                    // Update the navbar
+                    updateNavbar();
                 } else {
-                    console.error('First name missing from response:', data);
-                    alert('Login successful, but unable to retrieve user name.');
+                    console.error('User details missing from response:', data);
+                    alert('Login successful, but unable to retrieve user details.');
                 }
-
-                // Hide the modal
-                const loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
-                loginModal.hide();
-
-                // Update the navbar
-                updateNavbar();
             }
         })
         .catch((error) => {
@@ -115,6 +117,7 @@ document.getElementById('loginForm').addEventListener('submit', (event) => {
             alert('Failed to login. Please try again.');
         });
 });
+
 
 // Signup Functionality
 document.getElementById('signupForm').addEventListener('submit', (event) => {
@@ -158,6 +161,8 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
 
 // Initialize the Navbar on Page Load
 document.addEventListener('DOMContentLoaded', updateNavbar);
+
+
 
 
 // // Handle Book Consultation Button

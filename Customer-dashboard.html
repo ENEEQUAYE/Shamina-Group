@@ -80,7 +80,9 @@
                 <a class="nav-link text-white" href="#" data-target="#overview"><i class="fas fa-home"></i> Overview</a>
             </li>
 
-
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-target="#profile"><i class="fa fa-user"></i> Profile</a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link text-white" href="#" id="logoutButton"><i class="fa fa-sign-out"></i> Logout</a>
@@ -98,7 +100,70 @@
                         <h1 class="text-center my-4">Welcome to Your Dashboard</h1>
                     </div>
                 </div>
+            </div>
 
+            <!--------------------------------------------- Profile ---------------------------------------------->
+            <div id="profile" class="content-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center my-4">Profile</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <div class="card bg-white text-dark">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <!-- Profile Image -->
+                                    <img id="profileImage" src="img/user.jpg" alt="User Image" class="img-fluid rounded-circle" style="width: 100px;">
+                                </div>
+                                <h3 id="userFullName" class="text-center my-3">Full Name</h3>
+                                <!-- <p id="userPosition" class="text-center"><i class="fas fa-user-tag"></i> Position</p> -->
+                                <p id="userEmail" class="text-center"><i class="fas fa-envelope"></i> user@example.com</p>
+                                <p id="userPhone" class="text-center"><i class="fas fa-phone"></i> +1234567890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card bg-primary text-white text-center mb-3">
+                            <div class="card-body">
+                                <h3>Profile Picture</h3>
+                                <h1 class="display-4">
+                                    <i class="fas fa-user-circle"></i>
+                                </h1>
+                                <a href="#" class="btn btn-outline-light">Change Picture</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card bg-warning text-white text-center mb-3">
+                            <div class="card-body">
+                                <h3>Email</h3>
+                                <h1 class="display-4">
+                                    <i class="fas fa-envelope"></i>
+                                </h1>
+                                <a href="#" class="btn btn-outline-light">Change Email</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card bg-success text-white text-center mb-3">
+                            <div class="card-body">
+                                <h3>Password</h3>
+                                <h1 class="display-4">
+                                    <i class="fas fa-key"></i>
+                                </h1>
+                                <a href="#" class="btn btn-outline-light">Change Password</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 

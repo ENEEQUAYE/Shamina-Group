@@ -3,17 +3,18 @@ const myProfile = document.querySelector('#myProfile');
 // Update Navbar Based on Login State
 function updateNavbar() {
     const token = localStorage.getItem('token');
-    const first_name = localStorage.getItem('first_name'); // User's name saved during login
-    
+    const user = JSON.parse(localStorage.getItem('user'));  // Parse the user object
 
-    if (token) {
+    if (token && user) {
         // User is logged in
-        myProfile.innerHTML = `${first_name || 'My Profile'}`;
+        const first_name = user.first_name || 'My Profile';  // Get first_name from user object
+        myProfile.innerHTML = `${first_name}`;
     } else {
         // User is not logged in
         myProfile.innerHTML = 'My Profile';
     }
 }
+
 
 // Initialize the Navbar on Page Load
 document.addEventListener('DOMContentLoaded', updateNavbar);
@@ -55,3 +56,21 @@ const navItems = document.querySelectorAll('#sidebar a[data-target]');
         });
     });
 document.querySelector('#sidebar a[data-target="#overview"]').style.backgroundColor = '#0079a1';
+
+//////////////////////////////////////// Fetch user data from localStorage and populate profile details //////////////////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+    const user = JSON.parse(localStorage.getItem('user'));  // Get user object from localStorage
+
+    if (user) {
+        // Populate user details dynamically
+        document.getElementById('userFullName').textContent = `${user.first_name} ${user.last_name}`; // Full name
+        // document.getElementById('userPosition').innerHTML = `<i class="fas fa-user-tag"></i> ${user.position || 'N/A'}`;  // Position
+        document.getElementById('userEmail').innerHTML = `<i class="fas fa-envelope"></i> ${user.email}`;  // Email
+        document.getElementById('userPhone').innerHTML = `<i class="fas fa-phone"></i> ${user.phone || 'Not available'}`;  // Phone number
+
+        // Update profile picture if available
+        if (user.profilePic) {
+            document.getElementById('profileImage').src = user.profilePic;  // Update the profile image source
+        } 
+    }
+});

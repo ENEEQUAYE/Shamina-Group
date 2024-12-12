@@ -46,7 +46,9 @@ router.post('/', async (req, res) => {
                     <li><strong>Message:</strong> ${message}</li>
                 </ul>
                 <p>We will reach out to you shortly.</p>
-            `,
+                <br>
+                <p>Best regards,</p>
+                <p>Shamina Consultancy</p>       `,
         };
 
         // Admin email

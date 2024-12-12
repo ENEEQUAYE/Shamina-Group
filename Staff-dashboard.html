@@ -79,7 +79,29 @@
                     <a class="nav-link text-white" href="#" data-target="#overview"><i class="fas fa-home"></i> Overview</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" data-target="#profile"><i class="fa fa-user"></i> Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" data-target="#roomAvailability"><i class="fas fa-bed"></i>Room Availability</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" data-target="#checkInSection"><i class="fas fa-sign-in-alt"></i> Check-In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" data-target="#checkOutSection"><i class="fas fa-sign-out-alt"></i> Check-Out</a>
+                </li>
+                <!----Room reservation-->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" data-target="#reservationSection"><i class="fas fa-bed"></i> Room Reservation</a>
+                </li>
+                <!------Guest History-->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" data-target="#guestHistory"><i class="fas fa-history"></i> Guest History</a>
+                </li>
+                
 
+            
 
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#" id="logoutButton"><i class="fa fa-sign-out"></i> Logout</a>
@@ -98,63 +120,324 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card bg-primary text-white text-center mb-3">
+                                <div class="card-body">
+                                    <h3>Checked-In Guests</h3>
+                                    <h1 class="display-4">
+                                        <i class="fas fa-user-check"></i>
+                                    </h1>
+                                    <h1><span id="checkedInGuestCount">0</span></h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card bg-warning text-white text-center mb-3">
+                                <div class="card-body">
+                                    <h3>Available Rooms</h3>
+                                    <h1 class="display-4">
+                                        <i class="fas fa-bed"></i>
+                                    </h1>
+                                    <h1><span id="availableRoomCount">0</span></h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card bg-success text-white text-center mb-3">
+                                <div class="card-body">
+                                    <h3>Reserved Rooms</h3>
+                                    <h1 class="display-4">
+                                        <i class="fas fa-bed"></i>
+                                    </h1>
+                                   <h1><span id="reservedRoomCount">0</span></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!--------------------------------------------- Profile ---------------------------------------------->
+            <div id="profile" class="content-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center my-4">Profile</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <div class="card bg-white text-dark">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <!-- Profile Image -->
+                                    <img id="profileImage" src="img/user.jpg" alt="User Image" class="img-fluid rounded-circle" style="width: 100px;">
+                                </div>
+                                <h3 id="userFullName" class="text-center my-3">Full Name</h3>
+                                <p id="userPosition" class="text-center"><i class="fas fa-user-tag"></i> Position</p>
+                                <p id="userEmail" class="text-center"><i class="fas fa-envelope"></i> user@example.com</p>
+                                <p id="userPhone" class="text-center"><i class="fas fa-phone"></i> +1234567890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card bg-primary text-white text-center mb-3">
+                            <div class="card-body">
+                                <h3>Profile Picture</h3>
+                                <h1 class="display-4">
+                                    <i class="fas fa-user-circle"></i>
+                                </h1>
+                                <a href="#" class="btn btn-outline-light">Change Picture</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card bg-warning text-white text-center mb-3">
+                            <div class="card-body">
+                                <h3>Email</h3>
+                                <h1 class="display-4">
+                                    <i class="fas fa-envelope"></i>
+                                </h1>
+                                <a href="#" class="btn btn-outline-light">Change Email</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card bg-success text-white text-center mb-3">
+                            <div class="card-body">
+                                <h3>Password</h3>
+                                <h1 class="display-4">
+                                    <i class="fas fa-key"></i>
+                                </h1>
+                                <a href="#" class="btn btn-outline-light">Change Password</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--------------------------------------------- Room Availability ---------------------------------------------->
+            <div id="roomAvailability" class="content-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center my-4">Room Availability</h1>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="mb-3">
+                        <label for="roomTypeFilter" class="form-label">Filter by Room Type</label>
+                        <select id="roomTypeFilter" class="form-control">
+                            <option value="">All</option>
+                            <option value="Deluxe">Deluxe</option>
+                            <option value="Suite">Suite</option>
+                            <option value="Standard">Standard</option>
+                        </select>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Room Number</th>
+                                <th>Room Type</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="roomTableBody">
+                            <!-- Rooms will be dynamically populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!--------------------------------------------- Check-In ---------------------------------------------->
+            <div id="checkInSection" class="content-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center my-4">Guest Check-In</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <div class="card bg-white text-dark">
+                            <div class="card-body">
+                                <form id="checkInForm">
+                                    <div class="mb-3">
+                                        <label for="guestName" class="form-label">Guest Name</label>
+                                        <input type="text" id="guestName" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="guestContact" class="form-label">Contact</label>
+                                        <input type="text" id="guestContact" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="guestID" class="form-label">ID Proof</label>
+                                        <input type="text" id="guestID" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="roomSelection" class="form-label">Room</label>
+                                        <select id="roomSelection" class="form-select" required>
+                                            <!-- Rooms will be dynamically populated -->
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="checkInDate">Check-In Date and Time:</label>
+                                        <input type="datetime-local" id="checkInDate" name="checkInDate" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Check In</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--------------------------------------------- Check-Out ---------------------------------------------->
+            <div id="checkOutSection" class="content-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center my-4">Guest Check-Out</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 mx-auto">
+                        <!----------------Guest Filter------->
+                        <div class="mb-3">
+                            <label for="guestFilter" class="form-label">Filter by Guest Name:</label>
+                            <input type="text" id="guestFilter" class="form-control" required>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Guest Name</th>
+                                    <th>Contact</th>
+                                    <th>ID Proof</th>
+                                    <th>Room</th>
+                                    <th>Check-In Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="checkOutTableBody">
+                                <!-- Rows will be dynamically populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+           <!-----------------------------------------------------------------------Room Reservation------------------------------------>
+                <div id="reservationSection" class="content-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="text-center my-4">Room Reservation</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <div class="card bg-white text-dark">
+                                <div class="card-body">
+                                    <form id="reservationForm">
+                                        <div class="mb-3">
+                                            <label for="guestName" class="form-label">Guest Name</label>
+                                            <input type="text" id="guestName" class="form-control" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="guestContact" class="form-label">Contact</label>
+                                            <input type="text" id="guestContact" class="form-control" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="roomAvailable" class="form-label">Room</label>
+                                            <select id="roomAvailable" class="form-control" required>
+                                                <!-- Room options dynamically populated -->
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="checkInDate" class="form-label">Check-In Date</label>
+                                            <input type="date" id="checkinDate" class="form-control" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="checkOutDate" class="form-label">Check-Out Date</label>
+                                            <input type="date" id="checkoutDate" class="form-control" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Create Reservation</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 mx-auto">
+                            <table class="table table-bordered table-striped mt-4">
+                                <thead>
+                                    <tr>
+                                        <th>Guest Name</th>
+                                        <th>Contact</th>
+                                        <th>Room</th>
+                                        <th>Check-In Date</th>
+                                        <th>Check-Out Date</th>
+                                        <th>Status</th>
+                                        <th>Action</th> <!-- Cancel Reservation or Check-in-->
+                                    </tr>
+                                </thead>
+                                <tbody id="reservationTableBody">
+                                    <!-- Rows dynamically populated -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
 
 
+            <!--------------------------------------------- Guest History ---------------------------------------------->
+            <div id="guestHistory" class="content-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center my-4">Guest History</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 mx-auto">
+                        <div class="mb-3">
+                            <label for="guestHistoryFilter" class="form-label">Filter by Guest Name:</label>
+                            <input type="text" id="guestHistoryFilter" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="guestHistoryDate" class="form-label">Filter by Date:</label>
+                            <input type="date" id="guestHistoryDate" class="form-control" required>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Guest Name</th>
+                                    <th>Contact</th>
+                                    <th>ID Proof</th>
+                                    <th>Room</th>
+                                    <th>Check-In Date</th>
+                                    <th>Check-Out Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="guestHistoryTableBody">
+                                <!-- Rows will be dynamically populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>      
+            </div>
+            
+            
             </div>
         </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Script for Dynamic Section Switching (show #overview by default)-->
- <script>
-    const navLinks = document.querySelectorAll('#sidebar a[data-target]');
-    const contentSections = document.querySelectorAll('.content-section');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            const target = document.querySelector(link.getAttribute('data-target'));
-
-            contentSections.forEach(section => section.classList.add('d-none'));
-            if (target) target.classList.remove('d-none');
-        });
-    });
-
-    document.querySelector('#sidebar a[data-target="#overview"]').click();
- </script>
-
- 
-
-<!--------------------------------------------- Script for Logout Button ---------------------------------------------->
-<script>
-    const logoutButton = document.querySelector('#logoutButton');
-    logoutButton.addEventListener('click', () => {
-        // Clear local storage
-        localStorage.clear();
-        // Redirect to index.html
-        window.location.href = 'index.html';
-    });
-</script>
-    
-    
-    
-    
+    </div>    
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script src="js/customer.js"></script>
+<script src="js/staff.js"></script>
 </body>
 </html>

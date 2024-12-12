@@ -103,6 +103,15 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#" data-target="#activityBookings"><i class="fa fa-calendar"></i> Activity Bookings</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-target="#checkInSection"><i class="fas fa-sign-in-alt"></i> Check-In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-target="#checkOutSection"><i class="fas fa-sign-out-alt"></i> Check-Out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-target="#guestHistory"><i class="fas fa-history"></i> Guest History</a>
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#" data-target="#machineRental"><i class="fa fa-tractor"></i> Machine Rental</a>
@@ -136,7 +145,7 @@
                                         <h1 class="display-4">
                                             <i class="fas fa-user-tie"></i>
                                         </h1>
-                                        <a href="manage-consultancy.html" class="btn btn-outline-light">View</a>
+                                        <a href="#" class="btn btn-outline-light">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +156,7 @@
                                         <h1 class="display-4">
                                             <i class="fas fa-tractor"></i>
                                         </h1>
-                                        <a href="manage-farm.html" class="btn btn-outline-light">View</a>
+                                        <a href="#" class="btn btn-outline-light">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -158,109 +167,167 @@
                                         <h1 class="display-4">
                                             <i class="fas fa-hotel"></i>
                                         </h1>
-                                        <a href="manage-hotel.html" class="btn btn-outline-light">View</a>
+                                        <a href="#" class="btn btn-outline-light">View</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!--------------------------------------------- Profile (contains user's details such as profile picture, name, email, positon etc---------------------------------------------->
-                    <div id="profile" class="content-section">
 
                         <div class="row">
-                            <div class="col-md-12">
-                                <h1 class="text-center my-4">Profile</h1>
-                            </div>
-                        </div>
-                        
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card bg-primary text-white text-center mb-3">
-                                    <div class="card-body">
-                                        <h3>Profile Picture</h3>
-                                        <h1 class="display-4">
-                                            <i class="fas fa-user-circle"></i>
-                                        </h1>
-                                        <a href="#" class="btn btn-outline-light">Change Picture</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card bg-success text-white text-center mb-3">
-                                    <div class="card-body">
-                                        <h3>Name</h3>
-                                        <h1 class="display-4">
-                                            <i class="fas fa-user"></i>
-                                        </h1>
-                                        <a href="#" class="btn btn-outline-light">Change Name</a>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-md-4">
                                 <div class="card bg-warning text-white text-center mb-3">
                                     <div class="card-body">
-                                        <h3>Email</h3>
+                                        <h3>Available Rooms</h3>
                                         <h1 class="display-4">
-                                            <i class="fas fa-envelope"></i>
+                                            <i class="fas fa-bed"></i>
                                         </h1>
-                                        <a href="#" class="btn btn-outline-light">Change Email</a>
+                                        <h1><span id="availableRoomCount">0</span></h1>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-md-4">
                                 <div class="card bg-primary text-white text-center mb-3">
                                     <div class="card-body">
-                                        <h3>Position</h3>
+                                        <h3>Checked-In Guests</h3>
                                         <h1 class="display-4">
-                                            <i class="fas fa-user-tag"></i>
+                                            <i class="fas fa-user-check"></i>
                                         </h1>
-                                        <a href="#" class="btn btn-outline-light">Change Position</a>
+                                        <h1><span id="checkedInGuestCount">0</span></h1>
                                     </div>
                                 </div>
                             </div>
+    
                             <div class="col-md-4">
                                 <div class="card bg-success text-white text-center mb-3">
                                     <div class="card-body">
-                                        <h3>Password</h3>
+                                        <h3>Reserved Rooms</h3>
                                         <h1 class="display-4">
-                                            <i class="fas fa-key"></i>
+                                            <i class="fas fa-bed"></i>
                                         </h1>
-                                        <a href="#" class="btn btn-outline-light">Change Password</a>
+                                       <h1><span id="reservedRoomCount">0</span></h1>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6 mx-auto">
-                                <div class="card bg-white text-dark">
-                                    <div class="card-body">
-                                        <div class="text-center">
-                                            <img src="img/user.jpg" alt="User Image" class="img-fluid rounded-circle" style="width: 100px;">
-                                        </div>
-                                        <h3 class="text-center my-3">John Doe</h3>
-                                        <p class="text-center">Admin</p>
-                                        <p class="text-center">
-                                            <i class="fas fa-envelope"></i> <a href="mailto:
-                                            john.doe@example.com">john.doe@example.com</a>
-                                        </p>
+                            
 
-                                        <p class="text-center">
-                                            <i class="fas fa-phone"></i> <a href="tel:+233 24 000 0000">+233 24 000 0000</a>
-                                        </p>
+                            <div class="col-md-4">
+                                <div class="card bg-success text-white text-center mb-3">
+                                    <div class="card-body">
+                                        <h3>Activity Bookings</h3>
+                                        <h1 class="display-4">
+                                            <i class="fas fa-calendar"></i>
+                                        </h1>
+                                        <h1><span id="activityBookingCount">0</span></h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card bg-warning text-white text-center mb-3">
+                                    <div class="card-body">
+                                        <h3>Room Reservation</h3>
+                                        <h1 class="display-4">
+                                            <i class="fas fa-bed"></i>
+                                        </h1>
+                                        <h1><span id="roomBookingCount">0</span></h1>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4">
+                                <div class="card bg-primary text-white text-center mb-3">
+                                    <div class="card-body">
+                                        <h3>Consultancy Appointments</h3>
+                                        <h1 class="display-4">
+                                            <i class="fas fa-calendar"></i>
+                                        </h1>
+                                        <h1><span id="consultancyAppointmentCount">0</span></h1>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                  
+
+                   <!--------------------------------------------- Profile ---------------------------------------------->
+            <div id="profile" class="content-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center my-4">Profile</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <div class="card bg-white text-dark">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <!-- Profile Image -->
+                                    <img id="profileImage" src="img/user.jpg" alt="User Image" class="img-fluid rounded-circle" style="width: 100px;">
+                                </div>
+                                <h3 id="userFullName" class="text-center my-3">Full Name</h3>
+                                <p id="userPosition" class="text-center"><i class="fas fa-user-tag"></i> Position</p>
+                                <p id="userEmail" class="text-center"><i class="fas fa-envelope"></i> user@example.com</p>
+                                <p id="userPhone" class="text-center"><i class="fas fa-phone"></i> +1234567890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card bg-primary text-white text-center mb-3">
+                            <div class="card-body">
+                                <h3>Profile Picture</h3>
+                                <h1 class="display-4">
+                                    <i class="fas fa-user-circle" id="profileIcon"></i>
+                                </h1>
+                                <a href="#" class="btn btn-outline-light" id="changeProfilePic">Change Picture</a>
+                                <input type="file" id="profilePicInput" class="d-none" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card bg-warning text-white text-center mb-3">
+                            <div class="card-body">
+                                <h3>Email</h3>
+                                <h1 class="display-4">
+                                    <i class="fas fa-envelope"></i>
+                                </h1>
+                                <button id="changeEmailBtn" class="btn btn-outline-light">Change Email</button>
+                                <div id="changeEmailForm" class="d-none">
+                                    <input type="email" id="newEmail" class="form-control my-2" placeholder="Enter new email">
+                                    <button id="submitNewEmail" class="btn btn-outline-light">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card bg-success text-white text-center mb-3">
+                            <div class="card-body">
+                                <h3>Password</h3>
+                                <h1 class="display-4">
+                                    <i class="fas fa-key"></i>
+                                </h1>
+                                <button id="changePasswordBtn" class="btn btn-outline-light">Change Password</button>
+                                <div id="changePasswordForm" class="d-none">
+                                    <input type="password" id="newPassword" class="form-control my-2" placeholder="Enter new password">
+                                    <button id="submitNewPassword" class="btn btn-outline-light">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-                    <!--------------------------------------------- Manage Users (contains list of users and their details and action buttons to edit and delete staff and admin but none for customers) ---------------------------------------------->
+        <!--------------------------------------------- Manage Users (contains list of users and their details and action buttons to edit and delete staff and admin but none for customers) ---------------------------------------------->
                     <div id="manageUsers" class="content-section">
                         <div class="row">
                             <div class="col-md-12">
@@ -277,6 +344,7 @@
                                             <th>Email</th>
                                             <th>Position</th>
                                             <th>Role</th>
+                                            <th>Phone</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -299,18 +367,18 @@
                             <div class="col-md-6 mx-auto">
                                 <div class="card bg-white text-dark">
                                     <div class="card-body">
-                                        <form id="addUserForm" class="bg-white" action="http://localhost:5000/api/auth/adduser" method="POST" >
+                                        <form id="addUserForm" class="bg-white" action="http://localhost:5000/api/auth/adduser" method="POST">
                                             <div class="form-group mb-3">
-                                                <label for="first_name">First Name</label>
-                                                <input type="text" id="userFirstName" class="form-control" required title="First Name" placeholder="Enter your first name">
+                                                <label for="userFirstName">First Name</label>
+                                                <input type="text" id="userFirstName" class="form-control" required placeholder="Enter first name">
                                             </div>
                                             <div class="form-group mb-3">
-                                                <label for="last_name">Last Name</label>
-                                                <input type="text" id="userLastName" class="form-control" required title="Last Name" placeholder="Enter your last name">
+                                                <label for="userLastName">Last Name</label>
+                                                <input type="text" id="userLastName" class="form-control" required placeholder="Enter last name">
                                             </div>
                                             <div class="form-group mb-3">
-                                                <label for="email">Email</label>
-                                                <input type="email" id="userEmail" class="form-control" required title="Email" placeholder="Enter your email">
+                                                <label for="userEmail">Email</label>
+                                                <input type="email" id="userEmail" class="form-control" required placeholder="Enter your email">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="role">Role</label>
@@ -322,21 +390,25 @@
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="position">Position</label>
-                                                <input type="text" id="position" class="form-control" required title="Position" placeholder="Enter your position">
+                                                <input type="text" id="position" class="form-control" required placeholder="Enter position">
                                             </div>
                                             <div class="form-group mb-3">
-                                                <label for="password">Password</label>
-                                                <input type="password" id="userPassword" class="form-control" required title="Password" placeholder="Enter your password">
+                                                <label for="phone">Phone</label>
+                                                <input type="text" id="phone" class="form-control" required placeholder="Enter phone number">
                                             </div>
-                                            <button type="button" class="btn btn-primary" onclick="addUser()">Add User</button>
-                                        </form>                                        
+                                            <div class="form-group mb-3">
+                                                <label for="userPassword">Password</label>
+                                                <input type="password" id="userPassword" class="form-control" required placeholder="Enter password">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary" onclick="addUser(event)">Add User</button>
+                                        </form>                                                                         
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!--------------------------------------------- Appointments (contains list of appointments and their details and action buttons to edit and delete appointments) ---------------------------------------------->
+                                 
+                <!--------------------------------------------- Appointments (contains list of appointments and their details and action buttons to edit and delete appointments) ---------------------------------------------->
                     <div id="appointments" class="content-section">
                         <div class="row">
                             <div class="col-md-12">
@@ -430,9 +502,135 @@
                         </div>
                     </div>
 
-
+                     <!--------------------------------------------- Check-In ---------------------------------------------->
+            <div id="checkInSection" class="content-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center my-4">Guest Check-In</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <div class="card bg-white text-dark">
+                            <div class="card-body">
+                                <form id="checkInForm">
+                                    <div class="mb-3">
+                                        <label for="guestName" class="form-label">Guest Name</label>
+                                        <input type="text" id="guestName" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="guestContact" class="form-label">Contact</label>
+                                        <input type="text" id="guestContact" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="guestID" class="form-label">ID Proof</label>
+                                        <input type="text" id="guestID" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="roomSelection" class="form-label">Room</label>
+                                        <select id="roomSelection" class="form-select" required>
+                                            <!-- Rooms will be dynamically populated -->
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="checkInDate">Check-In Date and Time:</label>
+                                        <input type="datetime-local" id="checkInDate" name="checkInDate" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Check In</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!--------------------------------------------- Check-Out ---------------------------------------------->
+            <div id="checkOutSection" class="content-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center my-4">Guest Check-Out</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 mx-auto">
+                        <!----------------Guest Filter------->
+                        <div class="mb-3">
+                            <label for="guestFilter" class="form-label">Filter by Guest Name:</label>
+                            <input type="text" id="guestFilter" class="form-control" required>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Guest Name</th>
+                                    <th>Contact</th>
+                                    <th>ID Proof</th>
+                                    <th>Room</th>
+                                    <th>Check-In Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="checkOutTableBody">
+                                <!-- Rows will be dynamically populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+                    
+                    <!---------------------------------------------------------------------Guest History------------------------------------------>
+                    <div id="guestHistory" class="content-section">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center my-4">Guest History</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 mx-auto">
+                                <div class="mb-3">
+                                    <label for="guestHistoryFilter" class="form-label">Filter by Guest Name:</label>
+                                    <input type="text" id="guestHistoryFilter" class="form-control" required>
+                                </div>
+                                <!-------Filter by month------>
+                                <div class="mb-3">
+                                    <label for="monthFilter" class="form-label">Filter by Month:</label>
+                                    <select id="monthFilter" class="form-select" required>
+                                        <option value="0">All</option>
+                                        <option value="1">January</option>
+                                        <option value="2">February</option>
+                                        <option value="3">March</option>
+                                        <option value="4">April</option>
+                                        <option value="5">May</option>
+                                        <option value="6">June</option>
+                                        <option value="7">July</option>
+                                        <option value="8">August</option>
+                                        <option value="9">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select>
+                                </div>
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Guest Name</th>
+                                            <th>Contact</th>
+                                            <th>ID Proof</th>
+                                            <th>Room</th>
+                                            <th>Check-In Date</th>
+                                            <th>Check-Out Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="guestHistoryTableBody">
+                                        <!-- Rows will be dynamically populated -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>      
+                    </div>
+
+            </div>
+        </div>
     </div>
     
     <!-- Edit User Modal -->
@@ -467,6 +665,14 @@
                             <option value="customer">Customer</option>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="editPosition" class="form-label">Position</label>
+                        <input type="text" id="editPosition" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editPhone" class="form-label">Phone</label>
+                        <input type="text" id="editPhone" class="form-control" required>
+                    </div>
                     <button type="submit" class="btn btn-primary">Save Changes</button>
                 </form>
             </div>
@@ -480,5 +686,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="js/admin.js"></script>
+
 </body>
 </html>
