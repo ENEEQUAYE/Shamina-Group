@@ -309,17 +309,16 @@ document.addEventListener('DOMContentLoaded', () => {
         showGuestHistory(filteredGuests);
     });
 
-   // Filter guests based on the selected month
-   monthFilterInput.addEventListener('change', () => {
-    const monthValue = parseInt(monthFilterInput.value);
-    const filteredGuests = allGuests.filter(guest => {
-        if (monthValue === 0) return true; // Show all guests
-        const checkInMonth = new Date(guest.checkInDate).getMonth() + 1;
-        return checkInMonth === monthValue;
-    });
-    showGuestHistory(filteredGuests);
-});
-
+     // Filter guests based on the selected month
+        monthFilterInput.addEventListener('change', () => {
+            const monthValue = parseInt(monthFilterInput.value);
+            const filteredGuests = allGuests.filter(guest => {
+                if (monthValue === 0) return true; // Show all guests
+                const checkInMonth = new Date(guest.checkInDate).getMonth() + 1;
+                return checkInMonth === monthValue;
+            });
+            showGuestHistory(filteredGuests);
+        });
 
     // Fetch initial data
     fetchCheckedInGuests();
@@ -483,6 +482,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const checkedInGuestCount = document.getElementById('checkedInGuestCount');
     const availableRoomCount = document.getElementById('availableRoomCount');
     const reservedRoomCount = document.getElementById('reservedRoomCount');
+    const roomBookingCount = document.getElementById('roomBookingCount');
 
     // Fetch checked-in guests
     async function fetchCheckedInGuests() {
@@ -528,9 +528,24 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
+     // Fetch room bookings
+     async function fetchRoomBookings() {
+        try {
+            const response = await fetch('http://localhost:5000/api/roomBooking');
+            if (!response.ok) {
+                throw new Error('Failed to fetch room bookings');
+            }
+            const bookings = await response.json();
+            roomBookingCount.textContent = bookings.length;  // Update the count
+        } catch (error) {
+            console.error('Error fetching room bookings:', error);
+        }
+    }
+
     // Initialize the data on page load
     fetchCheckedInGuests();
     fetchAvailableRooms();
     fetchReservedRooms();
+    fetchRoomBookings();
 });
 
