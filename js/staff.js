@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // Fetch all rooms from the API
-        const response = await fetch('http://localhost:5000/api/rooms');
+        const response = await fetch('https://shaminagroupltd.onrender.com/api/rooms');
         rooms = await response.json(); // Assign rooms to the outer scoped variable
 
         // Populate table with room data
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // Fetch all rooms from the API
-        const response = await fetch('http://localhost:5000/api/rooms');
+        const response = await fetch('https://shaminagroupltd.onrender.com/api/rooms');
         if (!response.ok) {
             throw new Error(`Failed to fetch rooms: ${response.statusText}`);
         }
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/api/rooms/check-in', {
+            const response = await fetch('https://shaminagroupltd.onrender.com/api/rooms/check-in', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ guestName, guestContact, guestID, roomId, checkInDate }),
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch checked-in guests from the backend
     async function fetchCheckedInGuests() {
         try {
-            const response = await fetch('http://localhost:5000/api/guests/checked-in');
+            const response = await fetch('https://shaminagroupltd.onrender.com/api/guests/checked-in');
             if (!response.ok) {
                 throw new Error('Failed to fetch checked-in guests');
             }
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch all guests for history
     async function fetchGuestHistory() {
         try {
-            const response = await fetch('http://localhost:5000/api/guests/history');
+            const response = await fetch('https://shaminagroupltd.onrender.com/api/guests/history');
             if (!response.ok) {
                 throw new Error('Failed to fetch guest history');
             }
@@ -331,7 +331,7 @@ async function checkOutGuest(guestId) {
     console.log(`Attempting to check out guest with ID: ${guestId}`);
     if (confirm('Are you sure you want to check out this guest?')) {
         try {
-            const response = await fetch(`http://localhost:5000/api/guests/check-out/${guestId}`, {
+            const response = await fetch(`https://shaminagroupltd.onrender.com/api/guests/check-out/${guestId}`, {
                 method: 'PATCH',
             });
 
@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fetch available rooms
     async function fetchRooms() {
         try {
-            const response = await fetch('http://localhost:5000/api/rooms');
+            const response = await fetch('https://shaminagroupltd.onrender.com/api/rooms');
             if (!response.ok) {
                 throw new Error('Failed to fetch rooms');
             }
@@ -394,7 +394,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const checkOutDate = document.getElementById('checkoutDate').value;
 
         try {
-            const response = await fetch('http://localhost:5000/api/reservations/create', {
+            const response = await fetch('https://shaminagroupltd.onrender.com/api/reservations/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fetch and display all reservations
     async function loadReservations() {
         try {
-            const response = await fetch('http://localhost:5000/api/reservations');
+            const response = await fetch('https://shaminagroupltd.onrender.com/api/reservations');
             if (!response.ok) {
                 throw new Error('Failed to fetch reservations');
             }
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Cancel reservation
     async function cancelReservation(reservationId) {
         try {
-            const response = await fetch(`http://localhost:5000/api/reservations/cancel/${reservationId}`, {
+            const response = await fetch(`https://shaminagroupltd.onrender.com/api/reservations/cancel/${reservationId}`, {
                 method: 'PATCH',
             });
             const data = await response.json();
@@ -487,7 +487,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fetch checked-in guests
     async function fetchCheckedInGuests() {
         try {
-            const response = await fetch('http://localhost:5000/api/guests/checked-in');
+            const response = await fetch('https://shaminagroupltd.onrender.com/api/guests/checked-in');
             if (!response.ok) {
                 throw new Error('Failed to fetch checked-in guests');
             }
@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fetch available rooms
     async function fetchAvailableRooms() {
         try {
-            const response = await fetch('http://localhost:5000/api/rooms');
+            const response = await fetch('https://shaminagroupltd.onrender.com/api/rooms');
             if (!response.ok) {
                 throw new Error('Failed to fetch rooms');
             }
@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fetch reserved rooms
     async function fetchReservedRooms() {
         try {
-            const response = await fetch('http://localhost:5000/api/rooms');
+            const response = await fetch('https://shaminagroupltd.onrender.com/api/rooms');
             if (!response.ok) {
                 throw new Error('Failed to fetch rooms');
             }
@@ -531,7 +531,7 @@ document.addEventListener('DOMContentLoaded', async () => {
      // Fetch room bookings
      async function fetchRoomBookings() {
         try {
-            const response = await fetch('http://localhost:5000/api/roomBooking');
+            const response = await fetch('https://shaminagroupltd.onrender.com/api/roomBooking');
             if (!response.ok) {
                 throw new Error('Failed to fetch room bookings');
             }

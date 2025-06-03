@@ -68,7 +68,7 @@ function updateNavbar() {
 
 // Fetch Users and Populate the Table
 function fetchUsers() {
-    fetch('http://localhost:5000/api/users') // Adjust URL if necessary
+    fetch('https://shaminagroupltd.onrender.com/api/users') // Adjust URL if necessary
         .then(response => response.json())
         .then(users => {
             const tableBody = document.getElementById('manageUsersTable');
@@ -95,7 +95,7 @@ function fetchUsers() {
 
 // Show the Edit User Modal with User Data
 function showEditModal(userId) {
-    fetch(`http://localhost:5000/api/users/${userId}`)
+    fetch(`https://shaminagroupltd.onrender.com/api/users/${userId}`)
         .then(response => response.json())
         .then(user => {
             document.getElementById('editUserId').value = user._id;
@@ -122,7 +122,7 @@ document.getElementById('editUserForm').addEventListener('submit', function (e) 
         role: document.getElementById('editRole').value,
     };
 
-    fetch(`http://localhost:5000/api/users/${userId}`, {
+    fetch(`https://shaminagroupltd.onrender.com/api/users/${userId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedUser),
@@ -139,7 +139,7 @@ document.getElementById('editUserForm').addEventListener('submit', function (e) 
 // Delete a User
 function deleteUser(userId) {
     if (confirm('Are you sure you want to delete this user?')) {
-        fetch(`http://localhost:5000/api/users/${userId}`, {
+        fetch(`https://shaminagroupltd.onrender.com/api/users/${userId}`, {
             method: 'DELETE',
         })
             .then(response => response.json())
@@ -153,7 +153,7 @@ function deleteUser(userId) {
 
 // Fetch Room Bookings and Populate the Table
 function fetchRoomBookings() {
-    fetch('http://localhost:5000/api/rooms')
+    fetch('https://shaminagroupltd.onrender.com/api/rooms')
         .then(response => response.json())
         .then(data => {
             const tableBody = document.getElementById('roomBookingsTable');
@@ -188,7 +188,7 @@ function fetchRoomBookings() {
 // Delete a Room Booking
 function deleteRoomBooking(bookingId) {
     if (confirm('Are you sure you want to delete this room booking?')) {
-        fetch(`http://localhost:5000/api/rooms/${bookingId}`, {
+        fetch(`https://shaminagroupltd.onrender.com/api/rooms/${bookingId}`, {
             method: 'DELETE',
         })
             .then(response => response.json())
@@ -205,7 +205,7 @@ function deleteRoomBooking(bookingId) {
 
 // Fetch Appointments and Populate the Table
 function fetchAppointments() {
-    fetch('http://localhost:5000/api/appointments')
+    fetch('https://shaminagroupltd.onrender.com/api/appointments')
         .then(response => response.json())
         .then(data => {
             const tableBody = document.getElementById('appointmentsTable');
@@ -244,7 +244,7 @@ function addUser() {
     const position = document.getElementById('position').value;
     const password = document.getElementById('userPassword').value;
 
-    fetch('http://localhost:5000/api/auth/adduser', {
+    fetch('https://shaminagroupltd.onrender.com/api/auth/adduser', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

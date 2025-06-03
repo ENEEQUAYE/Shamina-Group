@@ -80,7 +80,7 @@ document.getElementById('loginForm').addEventListener('submit', (event) => {
     const email = document.getElementById('loginEmail').value.trim();
     const password = document.getElementById('loginPassword').value;
 
-    fetch('http://localhost:5000/api/auth/login', {
+    fetch('https://shaminagroupltd.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -128,7 +128,7 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
     const email = document.getElementById('signupEmail').value;
     const password = document.getElementById('signupPassword').value;
 
-    fetch('http://localhost:5000/api/auth/signup', {
+    fetch('https://shaminagroupltd.onrender.com/api/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
