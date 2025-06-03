@@ -50,7 +50,7 @@ function formatDate(dateString) {
     hours = hours ? hours : 12; // 0 should be 12
     minutes = minutes < 10 ? '0' + minutes : minutes;
     const time = hours + ':' + minutes + ' ' + ampm;
-    return day + '/' + month + '/' + year + ' ' + time;
+return `${day}/${month}/${year} ${time}`;
 }
 
 

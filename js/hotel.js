@@ -253,7 +253,7 @@ document.getElementById('roomBookingForm').addEventListener('submit', async (eve
     const specialRequests = document.getElementById('specialRequestsRoom').value;
 
     try {
-        const response = await fetch('http://localhost:5000/api/rooms/book', {
+        const response = await fetch('http://localhost:5000/api/roomBooking/book', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
